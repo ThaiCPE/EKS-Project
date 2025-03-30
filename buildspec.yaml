@@ -5,8 +5,7 @@ env:
     AWS_REGION: "us-east-1"
     ECR_REGISTRY: "195275633219.dkr.ecr.us-east-1.amazonaws.com"
     REPO_NAME: "eks-repo"
-    IMAGE_TAG: "wordpress-final"
-
+    IMAGE_TAG: "wordpress-final"  # Change this to your desired image tag
 phases:
   pre_build:
     commands:
