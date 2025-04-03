@@ -1,78 +1,49 @@
 #!/bin/bash
 
-# This script is used for manual deployment and configuration of resources on EKS
+# Install kubectl
+echo "Downloading kubectl..."
+curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/kubectl || { echo "Failed to download kubectl"; exit 1; }
 
-# Set region and cluster name
-REGION="us-east-1"
-CLUSTER_NAME="my-eks-cluster"
+echo "Making kubectl executable..."
+chmod +x ./kubectl
 
-# Update kubeconfig for EKS cluster
-echo "Updating kubeconfig for EKS cluster..."
-aws eks update-kubeconfig --region $REGION --name $CLUSTER_NAME
-if [ $? -ne 0 ]; then
-  echo "Failed to update kubeconfig. Exiting."
-  exit 1
-fi
+echo "Moving kubectl to /usr/local/bin/..."
+mv ./kubectl /usr/local/bin/
 
-# Associate OIDC provider with the cluster
-echo "Associating OIDC provider with EKS cluster..."
-eksctl utils associate-iam-oidc-provider --region $REGION --cluster $CLUSTER_NAME --approve
-if [ $? -ne 0 ]; then
-  echo "Failed to associate OIDC provider. Exiting."
-  exit 1
-fi
+# Build phase
+echo "Deploying to EKS cluster..."
 
-# Create Service Account for Load Balancer
-echo "Creating IAM service account for AWS Load Balancer Controller..."
-eksctl create iamserviceaccount \
-  --cluster $CLUSTER_NAME \
-  --namespace kube-system \
-  --name aws-load-balancer-controller \
-  --attach-policy-arn arn:aws:iam::195275633219:policy/AWSLoadBalancerControllerIAMPolicy \
-  --approve
-if [ $? -ne 0 ]; then
-  echo "Failed to create IAM service account for load balancer. Exiting."
-  exit 1
-fi
+# Check if AWS CLI is installed
+aws --version || { echo "AWS CLI not found"; exit 1; }
 
-# Create Service Account for Secret Manager Access
-echo "Creating IAM service account for Secret Manager access..."
-eksctl create iamserviceaccount \
-  --cluster $CLUSTER_NAME \
-  --namespace default \
-  --name wordpress-sa \
-  --attach-policy-arn arn:aws:iam::195275633219:policy/SecretsManagerAccessPolicy \
-  --approve
-if [ $? -ne 0 ]; then
-  echo "Failed to create IAM service account for secret manager access. Exiting."
-  exit 1
-fi
+# Check if AWS credentials are working
+aws sts get-caller-identity || { echo "AWS CLI credentials not working"; exit 1; }
 
-# Install the AWS Load Balancer Controller using Helm
-echo "Installing AWS Load Balancer Controller using Helm..."
-helm repo add eks https://aws.github.io/eks-charts
-helm repo update
-helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
-  -n kube-system \
-  --set clusterName=$CLUSTER_NAME \
-  --set serviceAccount.create=false \
-  --set serviceAccount.name=aws-load-balancer-controller \
-  --set aws.region=$REGION \
-  --set vpcId=vpc-0605c9b5b2d90999f
-if [ $? -ne 0 ]; then
-  echo "Failed to install load balancer controller. Exiting."
-  exit 1
-fi
+# List EKS clusters
+aws eks list-clusters --region us-east-1 || { echo "Failed to list EKS clusters"; exit 1; }
 
-# Apply Kubernetes manifests (Deployment, Service, Ingress, HPA)
-echo "Deploying Kubernetes resources..."
-kubectl apply -f deployment.yaml
-kubectl apply -f service.yaml
-kubectl apply -f ingress.yaml
-kubectl apply -f hpa.yaml
-if [ $? -ne 0 ]; then
-  echo "Failed to apply Kubernetes resources. Exiting."
-  exit 1
-fi
+# Check if the cluster exists
+echo "Checking cluster existence..."
+aws eks describe-cluster --name my-eks-cluster --region us-east-1 || { echo "Failed to describe cluster my-eks-cluster"; exit 1; }
 
-echo "Deployment completed successfully."
+# Update kubeconfig to use the EKS cluster
+echo "Updating kubeconfig for my-eks-cluster..."
+aws eks update-kubeconfig --name my-eks-cluster --region us-east-1 --debug || { echo "Failed to update kubeconfig"; exit 1; }
+
+# Verify kubectl version
+kubectl version || { echo "kubectl not working"; exit 1; }
+
+# Apply Kubernetes manifests
+echo "Applying Deployment.yaml..."
+kubectl apply -f Deployment.yaml || { echo "Failed to apply Deployment.yaml"; exit 1; }
+
+echo "Applying service.yaml..."
+kubectl apply -f service.yaml || { echo "Failed to apply service.yaml"; exit 1; }
+
+echo "Applying ingress.yaml..."
+kubectl apply -f ingress.yaml || { echo "Failed to apply ingress.yaml"; exit 1; }
+
+echo "Applying hpa.yaml..."
+kubectl apply -f hpa.yaml || { echo "Failed to apply hpa.yaml"; exit 1; }
+
+echo "Deployment to EKS completed successfully."
