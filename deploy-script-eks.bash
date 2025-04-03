@@ -1,55 +1,17 @@
 #!/bin/bash
+set -e
 
 # Install kubectl
-echo "Downloading kubectl..."
-curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/kubectl || { echo "Failed to download kubectl"; exit 1; }
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+chmod +x kubectl
+mv kubectl /usr/local/bin/
 
-echo "Making kubectl executable..."
-chmod +x ./kubectl
+# Update kubeconfig with proper IAM role
+aws eks update-kubeconfig --name my-eks-cluster --region us-east-1 \
+  --role-arn arn:aws:iam::195275633219:role/eks-cluster-role
 
-echo "Moving kubectl to /usr/local/bin/..."
-mv ./kubectl /usr/local/bin/
+# Verify access
+kubectl get nodes
 
-# Build phase
-echo "Deploying to EKS cluster..."
-
-# Check if AWS CLI is installed
-aws --version || { echo "AWS CLI not found"; exit 1; }
-
-# Check if AWS credentials are working
-aws sts get-caller-identity || { echo "AWS CLI credentials not working"; exit 1; }
-
-# List EKS clusters
-aws eks list-clusters --region us-east-1 || { echo "Failed to list EKS clusters"; exit 1; }
-
-# Check if the cluster exists
-echo "Checking cluster existence..."
-aws eks describe-cluster --name my-eks-cluster --region us-east-1 || { echo "Failed to describe cluster my-eks-cluster"; exit 1; }
-
-# Update kubeconfig to use the EKS cluster
-echo "Updating kubeconfig for my-eks-cluster..."
-aws eks update-kubeconfig --name my-eks-cluster --region us-east-1 --debug || { echo "Failed to update kubeconfig"; exit 1; }
-
-# Set kubectl to use the correct context
-kubectl config use-context arn:aws:eks:us-east-1:195275633219:cluster/my-eks-cluster || { echo "Failed to set kubectl context"; exit 1; }
-
-# Verify kubectl version
-kubectl version || { echo "kubectl not working"; exit 1; }
-
-# Apply Kubernetes manifests
-#echo "Updating Kubernetes manifest with new image tag..."
-#sed -i "s|{{IMAGE}}|$ECR_REGISTRY/$REPO_NAME:$IMAGE_TAG|g" Deployment.yaml
-
-echo "Applying Deployment.yaml..."
-kubectl apply -f Deployment.yaml || { echo "Failed to apply Deployment.yaml"; exit 1; }
-
-echo "Applying service.yaml..."
-kubectl apply -f service.yaml || { echo "Failed to apply service.yaml"; exit 1; }
-
-echo "Applying ingress.yaml..."
-kubectl apply -f ingress.yaml || { echo "Failed to apply ingress.yaml"; exit 1; }
-
-echo "Applying hpa.yaml..."
-kubectl apply -f hpa.yaml || { echo "Failed to apply hpa.yaml"; exit 1; }
-
-echo "Deployment to EKS completed successfully."
+# Apply your manifests
+kubectl apply -f Deployment.yaml -f service.yaml -f ingress.yaml -f hpa.yaml
