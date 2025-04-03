@@ -31,12 +31,16 @@ phases:
       - docker push $ECR_REGISTRY/$REPO_NAME:$CODEBUILD_RESOLVED_SOURCE_VERSION
       - docker push $ECR_REGISTRY/$REPO_NAME:$IMAGE_TAG
       
-  #post_build:
-    #commands:
+  post_build:
+    commands:
       #- echo Updating Kubernetes manifest...
       #- sed -i "s|{{IMAGE}}|$ECR_REGISTRY/$REPO_NAME:$IMAGE_TAG|g" Deployment.yaml
       #- echo Build completed
       # Run the deployment script for EKS
+      - echo Running deployment script for EKS...
+      # Run the deployment script for EKS
+      - chmod +x ./deploy-script-eks.bash
+      - ./deploy-script-eks.bash
 
 artifacts:
   files:
