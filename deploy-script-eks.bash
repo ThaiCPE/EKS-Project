@@ -30,10 +30,16 @@ aws eks describe-cluster --name my-eks-cluster --region us-east-1 || { echo "Fai
 echo "Updating kubeconfig for my-eks-cluster..."
 aws eks update-kubeconfig --name my-eks-cluster --region us-east-1 --debug || { echo "Failed to update kubeconfig"; exit 1; }
 
+# Set kubectl to use the correct context
+kubectl config use-context arn:aws:eks:us-east-1:195275633219:cluster/my-eks-cluster || { echo "Failed to set kubectl context"; exit 1; }
+
 # Verify kubectl version
 kubectl version || { echo "kubectl not working"; exit 1; }
 
 # Apply Kubernetes manifests
+#echo "Updating Kubernetes manifest with new image tag..."
+#sed -i "s|{{IMAGE}}|$ECR_REGISTRY/$REPO_NAME:$IMAGE_TAG|g" Deployment.yaml
+
 echo "Applying Deployment.yaml..."
 kubectl apply -f Deployment.yaml || { echo "Failed to apply Deployment.yaml"; exit 1; }
 
