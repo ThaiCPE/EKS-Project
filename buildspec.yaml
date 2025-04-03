@@ -7,16 +7,16 @@ env:
     REPO_NAME: "eks-repo"
     IMAGE_TAG: "wordpress-final"  # Change this to your desired image tag
     
-#phases:
-  #install:
-    #commands:
-      #- echo Installing kubectl...
+phases:
+  install:
+    commands:
+      - echo Installing kubectl...
       # Download kubectl binary
-      #- curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/kubectl || { echo "Failed to download kubectl"; exit 1; }
+      - curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/kubectl || { echo "Failed to download kubectl"; exit 1; }
       # Give execute permission to kubectl
-      #- chmod +x ./kubectl
+      - chmod +x ./kubectl
       # Move kubectl to the system's bin folder
-      #- mv ./kubectl /usr/local/bin/
+      - mv ./kubectl /usr/local/bin/
 
 phases:
   pre_build:
@@ -37,10 +37,9 @@ phases:
       #- sed -i "s|{{IMAGE}}|$ECR_REGISTRY/$REPO_NAME:$IMAGE_TAG|g" Deployment.yaml
       #- echo Build completed
       # Run the deployment script for EKS
-      - echo Running deployment script for EKS...
-      # Run the deployment script for EKS
-      - chmod +x ./deploy-script-eks.bash
-      - ./deploy-script-eks.bash
+      - echo Deploying to EKS cluster...
+      - aws eks update-kubeconfig --region us-east-1 --name my-eks-cluster
+      - kubectl apply -f Deployment.yaml -f service.yaml -f ingress.yaml -f hpa.yaml
 
 artifacts:
   files:
