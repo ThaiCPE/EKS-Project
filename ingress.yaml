@@ -10,7 +10,6 @@ metadata:
     alb.ingress.kubernetes.io/load-balancer-name: wordpress-alb
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
-    #alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
     alb.ingress.kubernetes.io/group.name: wordpress-alb
     # Specify Subnets
     alb.ingress.kubernetes.io/subnets: subnet-076b40e30bb7b79d5,subnet-0f6963df50c6b69e8
