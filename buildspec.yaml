@@ -6,6 +6,18 @@ env:
     ECR_REGISTRY: "195275633219.dkr.ecr.us-east-1.amazonaws.com"
     REPO_NAME: "eks-repo"
     IMAGE_TAG: "wordpress-final"  # Change this to your desired image tag
+    
+phases:
+  install:
+    commands:
+      - echo Installing kubectl...
+      # Download kubectl binary
+      - curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/kubectl || { echo "Failed to download kubectl"; exit 1; }
+      # Give execute permission to kubectl
+      - chmod +x ./kubectl
+      # Move kubectl to the system's bin folder
+      - mv ./kubectl /usr/local/bin/
+
 phases:
   pre_build:
     commands:
