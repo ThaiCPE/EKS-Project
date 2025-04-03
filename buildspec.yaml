@@ -26,5 +26,3 @@ phases:
 artifacts:
   files:
     - Deployment.yaml
-    - service.yaml
-    - ingress.yaml
