@@ -87,6 +87,5 @@ fi
 wp option update show_on_front "page" --path=/var/www/html --allow-root
 wp option update page_on_front "$PAGE_ID" --path=/var/www/html --allow-root
 
-
 # Call the original WordPress entrypoint
 exec docker-entrypoint.sh "$@"
