@@ -18,11 +18,11 @@ phases:
       - docker tag $ECR_REGISTRY/$REPO_NAME:$CODEBUILD_RESOLVED_SOURCE_VERSION $ECR_REGISTRY/$REPO_NAME:$IMAGE_TAG
       - docker push $ECR_REGISTRY/$REPO_NAME:$CODEBUILD_RESOLVED_SOURCE_VERSION
       - docker push $ECR_REGISTRY/$REPO_NAME:$IMAGE_TAG
-  post_build:
-    commands:
-      - echo Updating Kubernetes manifest...
-      - sed -i "s|{{IMAGE}}|$ECR_REGISTRY/$REPO_NAME:$IMAGE_TAG|g" Deployment.yaml
-      - echo Build completed
+  #post_build:
+    #commands:
+      #- echo Updating Kubernetes manifest...
+      #- sed -i "s|{{IMAGE}}|$ECR_REGISTRY/$REPO_NAME:$IMAGE_TAG|g" Deployment.yaml
+      #- echo Build completed
 artifacts:
   files:
     - Deployment.yaml
