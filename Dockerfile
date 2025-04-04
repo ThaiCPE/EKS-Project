@@ -9,10 +9,10 @@ RUN apt-get update && \
     ./aws/install && \
     rm -rf awscliv2.zip aws && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/* \
-    curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
-    && chmod +x wp-cli.phar \
-    && mv wp-cli.phar /usr/local/bin/wp
+    rm -rf /var/lib/apt/lists/* && \
+    curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
+    chmod +x wp-cli.phar && \
+    mv wp-cli.phar /usr/local/bin/wp
 
 # Copy custom wp-config.php (if required)
 #COPY wp-config.php /var/www/html/wp-config.php
