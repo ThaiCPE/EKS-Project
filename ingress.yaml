@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: wordpress-ingress
-  namespace: default
+  namespace: eks-project
   labels:
     app: wordpress 
   annotations:

@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: wordpress
-  namespace: default  # Explicitly specify the namespace
+  namespace: eks-project  # Explicitly specify the namespace
 spec:
   replicas: 2 
   selector:
