@@ -6,7 +6,7 @@ env:
     ECR_REGISTRY: "195275633219.dkr.ecr.us-east-1.amazonaws.com"
     REPO_NAME: "eks-repo"
     IMAGE_TAG: "wordpress-final"
-    EKS_CLUSTER_NAME: "my-eks-cluster2"
+    EKS_CLUSTER_NAME: "my-eks-cluster"
     K8S_NAMESPACE: "eks-project"
 
 phases:
