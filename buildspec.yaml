@@ -6,7 +6,7 @@ env:
     ECR_REGISTRY: "195275633219.dkr.ecr.us-east-1.amazonaws.com"
     REPO_NAME: "eks-repo"
     IMAGE_TAG: "wordpress-final"  # Change this to your desired image tag
-    
+
 phases:
   install:
     commands:
@@ -18,11 +18,11 @@ phases:
       # Move kubectl to the system's bin folder
       - mv ./kubectl /usr/local/bin/
 
-phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ECR_REGISTRY
+
   build:
     commands:
       - echo Building the Docker image...
@@ -30,15 +30,11 @@ phases:
       - docker tag $ECR_REGISTRY/$REPO_NAME:$CODEBUILD_RESOLVED_SOURCE_VERSION $ECR_REGISTRY/$REPO_NAME:$IMAGE_TAG
       - docker push $ECR_REGISTRY/$REPO_NAME:$CODEBUILD_RESOLVED_SOURCE_VERSION
       - docker push $ECR_REGISTRY/$REPO_NAME:$IMAGE_TAG
-      
+
   post_build:
     commands:
-      #- echo Updating Kubernetes manifest...
-      #- sed -i "s|{{IMAGE}}|$ECR_REGISTRY/$REPO_NAME:$IMAGE_TAG|g" Deployment.yaml
-      #- echo Build completed
-      # Run the deployment script for EKS
       - echo Deploying to EKS cluster...
-      - aws eks update-kubeconfig --region us-east-1 --name my-eks-cluster2
+      - aws eks update-kubeconfig --region $AWS_REGION --name my-eks-cluster2
       - kubectl apply -f Deployment.yaml -f service.yaml -f ingress.yaml -f hpa.yaml -n eks-project
 
 artifacts:
