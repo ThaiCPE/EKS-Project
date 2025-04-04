@@ -13,7 +13,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: pipeline-deployer-binding
-  namespace: default
+  namespace: eks-project
 subjects:
 - kind: User
   name: pipeline-role
