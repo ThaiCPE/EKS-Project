@@ -34,3 +34,10 @@ spec:
                 name: wordpress-service
                 port:
                   number: 80
+          - path: /wp-admin
+            pathType: Prefix
+            backend:
+              service:
+                name: wordpress-service
+                port:
+                  number: 80
