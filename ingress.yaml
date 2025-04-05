@@ -23,7 +23,7 @@ metadata:
     # SSL Certificate (Replace with your ACM Certificate ARN)
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:195275633219:certificate/36529a98-fb1e-442a-b1f9-2b3e898df314
     # Redirect HTTP to HTTPS (Optional but recommended)
-    alb.ingress.kubernetes.io/ssl-redirect: 'true'
+    #alb.ingress.kubernetes.io/ssl-redirect: 'true'
 
 spec:
   ingressClassName: alb  
