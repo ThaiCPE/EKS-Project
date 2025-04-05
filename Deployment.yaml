@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: wordpress
-  namespace: eks-project  # Explicitly specify the namespace
+  namespace: eks-project
 spec:
   replicas: 2
   selector:
@@ -13,7 +13,27 @@ spec:
       labels:
         app: wordpress
     spec:
-      serviceAccountName: wordpress-sa  # Use the service account for Secrets Manager access
+      serviceAccountName: wordpress-sa
+      volumes:
+        - name: secret-vol
+          emptyDir: {}
+
+      initContainers:
+        - name: fetch-secrets
+          image: amazonlinux:2
+          command: ["/bin/sh", "-c"]
+          args:
+            - |
+              yum install -y aws-cli jq;
+              SECRET=$(aws secretsmanager get-secret-value --region us-east-1 --secret-id rds-db-secret-Btidr5 --query SecretString --output text);
+              echo "$SECRET" | jq -r '.host' > /secrets/WORDPRESS_DB_HOST;
+              echo "$SECRET" | jq -r '.username' > /secrets/WORDPRESS_DB_USER;
+              echo "$SECRET" | jq -r '.password' > /secrets/WORDPRESS_DB_PASSWORD;
+              echo "$SECRET" | jq -r '.dbname' > /secrets/WORDPRESS_DB_NAME;
+          volumeMounts:
+            - name: secret-vol
+              mountPath: /secrets
+
       containers:
         - name: wordpress
           image: 195275633219.dkr.ecr.us-east-1.amazonaws.com/eks-repo:wordpress-final
@@ -26,24 +46,15 @@ spec:
             limits:
               memory: "512Mi"
               cpu: "500m"
-          env:
-            - name: WORDPRESS_DB_HOST
-              valueFrom:
-                secretKeyRef:
-                  name: rds-db-secret  # The name of the secret in AWS Secrets Manager
-                  key: host
-            - name: WORDPRESS_DB_USER
-              valueFrom:
-                secretKeyRef:
-                  name: rds-db-secret
-                  key: username
-            - name: WORDPRESS_DB_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: rds-db-secret
-                  key: password
-            - name: WORDPRESS_DB_NAME
-              valueFrom:
-                secretKeyRef:
-                  name: rds-db-secret
-                  key: dbname
+          command: ["/bin/sh"]
+          args:
+            - "-c"
+            - |
+              export WORDPRESS_DB_HOST=$(cat /secrets/WORDPRESS_DB_HOST)
+              export WORDPRESS_DB_USER=$(cat /secrets/WORDPRESS_DB_USER)
+              export WORDPRESS_DB_PASSWORD=$(cat /secrets/WORDPRESS_DB_PASSWORD)
+              export WORDPRESS_DB_NAME=$(cat /secrets/WORDPRESS_DB_NAME)
+              exec docker-entrypoint.sh apache2-foreground
+          volumeMounts:
+            - name: secret-vol
+              mountPath: /secrets
