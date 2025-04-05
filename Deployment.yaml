@@ -4,7 +4,7 @@ metadata:
   name: wordpress
   namespace: eks-project  # Explicitly specify the namespace
 spec:
-  replicas: 2 
+  replicas: 2
   selector:
     matchLabels:
       app: wordpress
@@ -17,7 +17,6 @@ spec:
       containers:
         - name: wordpress
           image: 195275633219.dkr.ecr.us-east-1.amazonaws.com/eks-repo:wordpress-final
-          #image: {{IMAGE}}  # Placeholder for ECR image, updated by CodePipeline
           ports:
             - containerPort: 80
           resources:
@@ -27,3 +26,24 @@ spec:
             limits:
               memory: "512Mi"
               cpu: "500m"
+          env:
+            - name: WORDPRESS_DB_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: rds-db-secret  # The name of the secret in AWS Secrets Manager
+                  key: host
+            - name: WORDPRESS_DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: rds-db-secret
+                  key: username
+            - name: WORDPRESS_DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: rds-db-secret
+                  key: password
+            - name: WORDPRESS_DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: rds-db-secret
+                  key: dbname
