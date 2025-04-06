@@ -22,6 +22,8 @@ phases:
 
   pre_build:
     commands:
+      - echo Logging in to Docker Hub...
+      - docker login -u $basil77 -p dckr_pat_H--z8EXaFHoQm55Oaaa05v3oZu8
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ECR_REGISTRY
 
