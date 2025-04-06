@@ -19,17 +19,18 @@ metadata:
     alb.ingress.kubernetes.io/healthcheck-protocol: HTTP
     alb.ingress.kubernetes.io/healthcheck-path: /
     # Listener Ports for HTTP and HTTPS
-    #alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
     # SSL Certificate (Replace with your ACM Certificate ARN)
-    #alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:195275633219:certificate/36529a98-fb1e-442a-b1f9-2b3e898df314
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:195275633219:certificate/36529a98-fb1e-442a-b1f9-2b3e898df314
     # Redirect HTTP to HTTPS (Optional but recommended)
     #alb.ingress.kubernetes.io/ssl-redirect: 'true'
+    #alb.ingress.kubernetes.io/ssl-redirect: '443'
 
 spec:
   ingressClassName: alb  
   rules:
-   #- host: "basiltalias.site"
-    - http:
+   - host: "basiltalias.site"
+     http:
         paths:
           - path: /
             pathType: Prefix
