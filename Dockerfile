@@ -15,7 +15,7 @@ RUN apt-get update && \
     mv wp-cli.phar /usr/local/bin/wp
 
 # Copy custom wp-config.php (if required)
-#COPY wp-config.php /var/www/html/wp-config.php
+COPY wp-config.php /var/www/html/wp-config.php
 
 # Copy updated custom theme with 2048 game
 #COPY ./simple-theme /var/www/html/wp-content/themes/
