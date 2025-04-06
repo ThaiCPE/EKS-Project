@@ -32,11 +32,11 @@ phases:
      # - docker tag $ECR_REGISTRY/$REPO_NAME:$CODEBUILD_RESOLVED_SOURCE_VERSION $ECR_REGISTRY/$REPO_NAME:$IMAGE_TAG
      # - docker push $ECR_REGISTRY/$REPO_NAME:$CODEBUILD_RESOLVED_SOURCE_VERSION
      # - docker push $ECR_REGISTRY/$REPO_NAME:$IMAGE_TAG
-    - echo Deleting old image tag from ECR...
-    - aws ecr batch-delete-image \
-        --repository-name $REPO_NAME \
-        --image-ids imageTag=$IMAGE_TAG \
-        --region $AWS_REGION || echo "No existing image with tag $IMAGE_TAG"
+    #- echo Deleting old image tag from ECR...
+    #- aws ecr batch-delete-image \
+    #    --repository-name $REPO_NAME \
+     #   --image-ids imageTag=$IMAGE_TAG \
+     #   --region $AWS_REGION || echo "No existing image with tag $IMAGE_TAG"
 
     - echo Building the Docker image...
     - docker build -t $ECR_REGISTRY/$REPO_NAME:$IMAGE_TAG .
