@@ -19,7 +19,7 @@ RUN apt-get update && \
 
 # Copy updated custom theme with 2048 game
 COPY ./simple-theme /var/www/html/wp-content/themes/simple-theme
-
+COPY skt-clover /var/www/html/wp-content/themes/skt-clover
 # Set the correct permissions
 RUN chown -R www-data:www-data /var/www/html
 
