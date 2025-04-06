@@ -17,6 +17,7 @@ spec:
       containers:
         - name: wordpress
           image: 195275633219.dkr.ecr.us-east-1.amazonaws.com/eks-repo:wordpress-final
+          imagePullPolicy: Always  # Always pull the latest image
           #image: {{IMAGE}}  # Placeholder for ECR image, updated by CodePipeline
           ports:
             - containerPort: 80
