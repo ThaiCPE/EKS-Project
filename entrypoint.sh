@@ -37,16 +37,10 @@ if [ ! -f /var/www/html/wp-config.php ]; then
     sed -i "s/password_here/$WORDPRESS_DB_PASSWORD/" /var/www/html/wp-config.php
     sed -i "s/localhost/$WORDPRESS_DB_HOST/" /var/www/html/wp-config.php
 
-    # Add salts
-    #echo " Adding security salts..."
-    #curl -s https://api.wordpress.org/secret-key/1.1/salt/ >> /var/www/html/wp-config.php
-
     # Set permissions
     chown www-data:www-data /var/www/html/wp-config.php
     chmod 640 /var/www/html/wp-config.php
 fi
 
-# Start WordPress
-#exec docker-entrypoint.sh "$@"
 
 exec apache2-foreground
