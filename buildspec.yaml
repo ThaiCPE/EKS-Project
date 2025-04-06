@@ -39,7 +39,7 @@ phases:
      #   --region $AWS_REGION || echo "No existing image with tag $IMAGE_TAG"
 
     - echo Building the Docker image...
-    - docker build -t $ECR_REGISTRY/$REPO_NAME:$IMAGE_TAG .
+    - docker build --no-cache -t $ECR_REGISTRY/$REPO_NAME:$IMAGE_TAG .
 
     - echo Pushing the new image to ECR...
     - docker push $ECR_REGISTRY/$REPO_NAME:$IMAGE_TAG
