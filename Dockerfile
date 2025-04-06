@@ -18,7 +18,7 @@ RUN apt-get update && \
 #COPY wp-config.php /var/www/html/wp-config.php
 
 # Copy updated custom theme with 2048 game
-#COPY ./my-custom-theme /var/www/html/wp-content/themes/my-custom-theme
+COPY ./my-custom-theme /var/www/html/wp-content/themes/my-custom-theme
 
 # Set the correct permissions
 RUN chown -R www-data:www-data /var/www/html
