@@ -16,12 +16,12 @@ RUN apt-get update && \
     #wp core download --path=/var/www/html --allow-root --no-prompt --skip-content
 
 # Copy custom wp-config.php (if required)
-COPY wp-config.php /var/www/html/wp-config.php
+#COPY wp-config.php /var/www/html/wp-config.php
 
 # Copy updated custom theme with 2048 game
 #COPY ./simple-theme /var/www/html/wp-content/themes/simple-theme
 COPY skt-clover /var/www/html/wp-content/themes/skt-clover
-COPY ./gym /var/www/html/wp-content/themes/gym
+#COPY ./gym /var/www/html/wp-content/themes/gym
 
 # Set the correct permissions
 RUN chown -R www-data:www-data /var/www/html
