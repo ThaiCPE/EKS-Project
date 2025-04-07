@@ -26,17 +26,11 @@ fi
 # Update wp-config.php with the database credentials
 echo "🛠 Updating wp-config.php with database credentials..."
 
-# Only add database definitions if they don't already exist
-if ! grep -q "define.*DB_NAME" /var/www/html/wp-config.php; then
-  # Insert database credentials right after the opening comment block closes with */
-  sed -i '/\*\//a\
-\
-// ** MySQL settings - You can get this info from your web host ** //\
-define( '\''DB_NAME'\'', '\'''"$WORDPRESS_DB_NAME"'\''\'' );\
-define( '\''DB_USER'\'', '\'''"$WORDPRESS_DB_USER"'\''\'' );\
-define( '\''DB_PASSWORD'\'', '\'''"$WORDPRESS_DB_PASSWORD"'\''\'' );\
-define( '\''DB_HOST'\'', '\'''"$WORDPRESS_DB_HOST"'\''\'' );' /var/www/html/wp-config.php
-fi
+# Since the MySQL settings section already exists, just update the values
+sed -i "s/define( 'DB_NAME'.*)/define( 'DB_NAME', '$WORDPRESS_DB_NAME' );/" /var/www/html/wp-config.php
+sed -i "s/define( 'DB_USER'.*)/define( 'DB_USER', '$WORDPRESS_DB_USER' );/" /var/www/html/wp-config.php
+sed -i "s/define( 'DB_PASSWORD'.*)/define( 'DB_PASSWORD', '$WORDPRESS_DB_PASSWORD' );/" /var/www/html/wp-config.php
+sed -i "s/define( 'DB_HOST'.*)/define( 'DB_HOST', '$WORDPRESS_DB_HOST' );/" /var/www/html/wp-config.php
 
 # Set permissions
 chown www-data:www-data /var/www/html/wp-config.php
