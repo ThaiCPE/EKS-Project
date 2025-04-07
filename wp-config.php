@@ -31,6 +31,9 @@ $table_prefix  = 'wp_';
 
 // ** For developers: WordPress debugging mode. ** //
 define('WP_DEBUG', true);
+define('WP_DEBUG_LOG', true);  // This enables the debug log
+define('WP_DEBUG_DISPLAY', false);  // This hides debug messages from displaying on the frontend
+
 
 // ** Absolute path to the WordPress directory. ** //
 if ( !defined('ABSPATH') )
