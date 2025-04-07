@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Retrieve the secret from AWS Secrets Manager
-SECRET_JSON=$(aws secretsmanager get-secret-value --secret-id rds-db-secret --query SecretString --output text)
+SECRET_JSON=$(aws secretsmanager get-secret-value --secret-id eksproject-db-secret --query SecretString --output text)
 
 # Check if the secret was retrieved successfully
 if [ $? -ne 0 ] || [ -z "$SECRET_JSON" ]; then
