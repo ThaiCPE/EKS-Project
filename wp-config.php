@@ -32,6 +32,11 @@ $table_prefix  = 'wp_';
 define('WP_DEBUG', true);
 define('WP_DEBUG_LOG', true);  // This enables the debug log
 define('WP_DEBUG_DISPLAY', false);  // This hides debug messages from displaying on the frontend
+
+// ** URLS ** //
+define('WP_HOME', 'https://basiltalias.site');
+define('WP_SITEURL', 'https://basiltalias.site');
+
 // ** Absolute path to the WordPress directory. ** //
 if ( !defined('ABSPATH') )
     define('ABSPATH', dirname(_FILE_) . '/');

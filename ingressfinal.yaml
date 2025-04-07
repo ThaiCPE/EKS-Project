@@ -17,7 +17,7 @@ metadata:
     alb.ingress.kubernetes.io/security-groups: sg-007eec980dbe82770
     # Health Check
     alb.ingress.kubernetes.io/healthcheck-protocol: HTTP
-    alb.ingress.kubernetes.io/healthcheck-path: /wp-login.php
+    alb.ingress.kubernetes.io/healthcheck-path: /
     # Listener Ports for HTTP and HTTPS
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
     # SSL Certificate (Replace with your ACM Certificate ARN)
