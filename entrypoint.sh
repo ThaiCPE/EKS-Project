@@ -24,19 +24,19 @@ if ! mysql -h "$WORDPRESS_DB_HOST" -u "$WORDPRESS_DB_USER" -p"$WORDPRESS_DB_PASS
 fi
 
 # Update wp-config.php with the database credentials
-echo "🛠 Updating wp-config.php with database credentials..."
+echo " Updating wp-config.php with database credentials..."
 
-# Since the MySQL settings section already exists, just update the values
-sed -i "s/define( 'DB_NAME'.*)/define( 'DB_NAME', '$WORDPRESS_DB_NAME' );/" /var/www/html/wp-config.php
-sed -i "s/define( 'DB_USER'.*)/define( 'DB_USER', '$WORDPRESS_DB_USER' );/" /var/www/html/wp-config.php
-sed -i "s/define( 'DB_PASSWORD'.*)/define( 'DB_PASSWORD', '$WORDPRESS_DB_PASSWORD' );/" /var/www/html/wp-config.php
-sed -i "s/define( 'DB_HOST'.*)/define( 'DB_HOST', '$WORDPRESS_DB_HOST' );/" /var/www/html/wp-config.php
+# Replace placeholders with actual values
+sed -i "s/%%DB_NAME%%/$WORDPRESS_DB_NAME/g" /var/www/html/wp-config.php
+sed -i "s/%%DB_USER%%/$WORDPRESS_DB_USER/g" /var/www/html/wp-config.php
+sed -i "s/%%DB_PASSWORD%%/$WORDPRESS_DB_PASSWORD/g" /var/www/html/wp-config.php
+sed -i "s/%%DB_HOST%%/$WORDPRESS_DB_HOST/g" /var/www/html/wp-config.php
 
 # Set permissions
 chown www-data:www-data /var/www/html/wp-config.php
 chmod 640 /var/www/html/wp-config.php
 
-echo "WordPress configuration completed successfully!"
+echo " WordPress configuration completed successfully!"
 
 # Start Apache
 exec apache2-foreground

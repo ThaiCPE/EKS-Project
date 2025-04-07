@@ -9,13 +9,14 @@
  *
  * @package WordPress
  */
-
-
-
+// ** MySQL settings - You can get this info from your web host ** //
+define('DB_NAME', '%%DB_NAME%%');
+define('DB_USER', '%%DB_USER%%');
+define('DB_PASSWORD', '%%DB_PASSWORD%%');
+define('DB_HOST', '%%DB_HOST%%');
 // ** Database Charset and Collate Type ** //
 define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
-
 // ** Authentication Unique Keys and Salts. ** //
 define('AUTH_KEY',         'random_string_here');
 define('SECURE_AUTH_KEY',  'random_string_here');
@@ -25,19 +26,14 @@ define('AUTH_SALT',        'random_string_here');
 define('SECURE_AUTH_SALT', 'random_string_here');
 define('LOGGED_IN_SALT',   'random_string_here');
 define('NONCE_SALT',       'random_string_here');
-
 // ** WordPress Database Table prefix. ** //
 $table_prefix  = 'wp_';
-
 // ** For developers: WordPress debugging mode. ** //
 define('WP_DEBUG', true);
 define('WP_DEBUG_LOG', true);  // This enables the debug log
 define('WP_DEBUG_DISPLAY', false);  // This hides debug messages from displaying on the frontend
-
-
 // ** Absolute path to the WordPress directory. ** //
 if ( !defined('ABSPATH') )
-    define('ABSPATH', dirname(__FILE__) . '/');
-
+    define('ABSPATH', dirname(_FILE_) . '/');
 // ** Sets up WordPress vars and included files. ** //
 require_once(ABSPATH . 'wp-settings.php');
