@@ -29,8 +29,8 @@ metadata:
 spec:
   ingressClassName: alb  
   rules:
-   - host: "basiltalias.site"
-     http:
+   #- host: "basiltalias.site"
+    - http:
         paths:
           - path: /
             pathType: Prefix
