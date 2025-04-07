@@ -1,0 +1,29 @@
+/* 2048 Game Styles for WordPress */
+.game-2048-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.game-wrapper {
+    position: relative;
+    margin: 20px auto;
+    max-width: 452px;
+}
+
+.game-instruction {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Rest of your existing CSS remains the same */
+html{
+    height: 100%;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+/* ... (keep all your existing CSS rules below) ... */
