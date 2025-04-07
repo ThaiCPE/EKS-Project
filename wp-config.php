@@ -10,11 +10,7 @@
  * @package WordPress
  */
 
-// ** Database settings - These can be set dynamically by entrypoint.sh ** //
-define('DB_NAME', 'database_name_here');
-define('DB_USER', 'username_here');
-define('DB_PASSWORD', 'password_here');
-define('DB_HOST', 'localhost');
+
 
 // ** Database Charset and Collate Type ** //
 define('DB_CHARSET', 'utf8');
@@ -34,7 +30,7 @@ define('NONCE_SALT',       'random_string_here');
 $table_prefix  = 'wp_';
 
 // ** For developers: WordPress debugging mode. ** //
-define('WP_DEBUG', false);
+define('WP_DEBUG', true);
 
 // ** Absolute path to the WordPress directory. ** //
 if ( !defined('ABSPATH') )
