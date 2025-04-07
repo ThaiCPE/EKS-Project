@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div class="container">
-    <h1>Welcome to My Simple Theme!</h1>
+    <h1>Welcome to Basil's Website!</h1>
     <p>This is a simple WordPress theme.</p>
 
     <!-- Start WordPress Loop -->
