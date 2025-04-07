@@ -20,7 +20,7 @@ COPY wp-config.php /var/www/html/wp-config.php
 
 # Copy updated custom theme with 2048 game
 COPY ./simple-theme /var/www/html/wp-content/themes/simple-theme
-#COPY skt-clover /var/www/html/wp-content/themes/
+COPY skt-clover /var/www/html/wp-content/themes/
 #COPY ./gym /var/www/html/wp-content/themes/gym
 
 # Set the correct permissions
