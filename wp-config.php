@@ -10,11 +10,11 @@
  * @package WordPress
  */
 
-// ** Database settings - These can be found in AWS Secrets Manager ** //
-define('DB_NAME', getenv('WORDPRESS_DB_NAME'));
-define('DB_USER', getenv('WORDPRESS_DB_USER'));
-define('DB_PASSWORD', getenv('WORDPRESS_DB_PASSWORD'));
-define('DB_HOST', getenv('WORDPRESS_DB_HOST'));
+// ** Database settings - These can be set dynamically by entrypoint.sh ** //
+define('DB_NAME', 'database_name_here');
+define('DB_USER', 'username_here');
+define('DB_PASSWORD', 'password_here');
+define('DB_HOST', 'localhost');
 
 // ** Database Charset and Collate Type ** //
 define('DB_CHARSET', 'utf8');
