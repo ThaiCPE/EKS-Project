@@ -2,7 +2,8 @@
 FROM public.ecr.aws/bitnami/wordpress:latest
 
 # Install necessary dependencies (including aws CLI, jq, and mysql-client)
-RUN apt-get update && \
+RUN mkdir -p /var/lib/apt/lists/partial && \
+    apt-get update && \
     apt-get install -y curl unzip jq mariadb-client && \
     curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
     unzip awscliv2.zip && \
