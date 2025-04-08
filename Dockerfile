@@ -39,4 +39,4 @@ EXPOSE 80
 ENTRYPOINT ["entrypoint.sh"]
 
 # Start the default WordPress entrypoint
-CMD ["apache2-foreground"]
+#CMD ["apache2-foreground"]

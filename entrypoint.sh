@@ -67,4 +67,4 @@ chmod 644 /var/www/html/.htaccess
 chmod 640 /var/www/html/wp-config.php
 
 # Start Apache
-#exec apache2-foreground
+exec apache2-foreground
