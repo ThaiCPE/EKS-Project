@@ -49,8 +49,13 @@ if ( !defined('ABSPATH') )
 // ** Sets up WordPress vars and included files. ** //
 require_once(ABSPATH . 'wp-settings.php');
 
-#define('FORCE_SSL_ADMIN', true);
-#define('FORCE_SSL', true);
+
 #if ($_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
 #    $_SERVER['HTTPS'] = 'on';
 #}
+
+// Skip redirect for health check paths
+if (strpos($_SERVER['REQUEST_URI'], '/health') === false && $_SERVER['HTTPS'] != 'on') {
+    header('Location: https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+    exit();
+}
