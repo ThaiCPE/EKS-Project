@@ -34,8 +34,8 @@ define('WP_DEBUG_LOG', true);  // This enables the debug log
 define('WP_DEBUG_DISPLAY', true);  // This hides debug messages from displaying on the frontend
 
 // ** URLS ** //
-#define('WP_HOME', 'https://basiltalias.site');
-#define('WP_SITEURL', 'https://basiltalias.site');
+define('WP_HOME', 'https://basiltalias.site');
+define('WP_SITEURL', 'https://basiltalias.site');
 
 // ** Absolute path to the WordPress directory. ** //
 if ( !defined('ABSPATH') )
