@@ -1,5 +1,5 @@
 # Use the official WordPress image
-FROM wordpress:latest
+FROM wordpress:php8.4-apache
 
 # Install necessary dependencies (including aws CLI, jq, and mysql-client)
 RUN apt-get update && \
@@ -13,7 +13,8 @@ RUN apt-get update && \
     curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
     chmod +x wp-cli.phar && \
     mv wp-cli.phar /usr/local/bin/wp
-    #wp core download --path=/var/www/html --allow-root --no-prompt --skip-content
+ 
+#wp core download --path=/var/www/html --allow-root --no-prompt --skip-content
 
 # Copy custom wp-config.php (if required)
 COPY wp-config.php /var/www/html/wp-config.php
