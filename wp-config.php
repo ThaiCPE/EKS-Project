@@ -34,8 +34,8 @@ define('WP_DEBUG_LOG', true);  // This enables the debug log
 define('WP_DEBUG_DISPLAY', true);  // This hides debug messages from displaying on the frontend
 
 // ** URLS ** //
-define('WP_HOME', 'https://basiltalias.site');
-define('WP_SITEURL', 'https://basiltalias.site');
+#define('WP_HOME', 'https://basiltalias.site');
+#define('WP_SITEURL', 'https://basiltalias.site');
 
 // ** Absolute path to the WordPress directory. ** //
 if ( !defined('ABSPATH') )
@@ -43,8 +43,8 @@ if ( !defined('ABSPATH') )
 // ** Sets up WordPress vars and included files. ** //
 require_once(ABSPATH . 'wp-settings.php');
 
-#define('FORCE_SSL_ADMIN', true);
-#define('FORCE_SSL', true);
+define('FORCE_SSL_ADMIN', true);
+define('FORCE_SSL', true);
 #if ($_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
 #    $_SERVER['HTTPS'] = 'on';
 #}

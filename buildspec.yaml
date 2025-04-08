@@ -12,13 +12,13 @@ env:
 phases:
   install:
     commands:
-      - echo Installing kubectl...
+      #- echo Installing kubectl...
       # Download kubectl binary
-      - curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/kubectl || { echo "Failed to download kubectl"; exit 1; }
+      #- curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/kubectl || { echo "Failed to download kubectl"; exit 1; }
       # Give execute permission to kubectl
-      - chmod +x ./kubectl
+      #- chmod +x ./kubectl
       # Move kubectl to the system's bin folder
-      - mv ./kubectl /usr/local/bin/
+      #- mv ./kubectl /usr/local/bin/
 
   pre_build:
     commands:
@@ -51,17 +51,17 @@ phases:
     #- echo Pushing the new image to ECR...
     #- docker push $ECR_REGISTRY/$REPO_NAME:$IMAGE_TAG
 
-  post_build:
-    commands:
-      - echo "Deploying to EKS cluster..."
-      - aws eks update-kubeconfig --region $AWS_REGION --name $EKS_CLUSTER_NAME
+  #post_build:
+    #commands:
+      #- echo "Deploying to EKS cluster..."
+      #- aws eks update-kubeconfig --region $AWS_REGION --name $EKS_CLUSTER_NAME
       #- kubectl apply -f Deployment.yaml -f service.yaml -f ingress.yaml -f hpa.yaml -n $K8S_NAMESPACE
       #- echo "Verifying deployment..."
       #- kubectl get deployments,svc,ingress,hpa -n $K8S_NAMESPACE
 
-artifacts:
-  files:
-    - Deployment.yaml
-    - service.yaml
-    - ingress.yaml
-    - hpa.yaml
+#artifacts:
+ # files:
+ #   - Deployment.yaml
+ #   - service.yaml
+ #   - ingress.yaml
+ #   - hpa.yaml
