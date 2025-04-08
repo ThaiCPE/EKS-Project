@@ -19,9 +19,9 @@ RUN apt-get update && \
 COPY wp-config.php /var/www/html/wp-config.php
 
 # Copy updated custom theme with 2048 game
-#COPY ./simple-theme /var/www/html/wp-content/themes/simple-theme
+COPY ./simple-theme /var/www/html/wp-content/themes/simple-theme
 COPY ./Word-Web /var/www/html/wp-content/themes/Word-Web
-COPY ./2048 /var/www/html/wp-content/themes/2048
+#COPY ./2048 /var/www/html/wp-content/themes/2048
 
 #COPY ./gym /var/www/html/wp-content/themes/gym
 

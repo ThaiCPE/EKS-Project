@@ -31,15 +31,21 @@ $table_prefix  = 'wp_';
 // ** For developers: WordPress debugging mode. ** //
 define('WP_DEBUG', true);
 define('WP_DEBUG_LOG', true);  // This enables the debug log
-define('WP_DEBUG_DISPLAY', true);  // This hides debug messages from displaying on the frontend
+define('WP_DEBUG_DISPLAY', false);  // This hides debug messages from displaying on the frontend
 
 // ** URLS ** //
 define('WP_HOME', 'https://basiltalias.site');
 define('WP_SITEURL', 'https://basiltalias.site');
 
+// ** Cookie Settings ** //
+define('COOKIE_DOMAIN', 'basiltalias.site');
+define('ADMIN_COOKIE_PATH', '/');
+define('COOKIEPATH', '/');
+define('SITECOOKIEPATH', '/');
+
 // ** Absolute path to the WordPress directory. ** //
 if ( !defined('ABSPATH') )
-    define('ABSPATH', dirname(_FILE_) . '/');
+      define('ABSPATH', dirname(__FILE__) . '/');
 // ** Sets up WordPress vars and included files. ** //
 require_once(ABSPATH . 'wp-settings.php');
 
