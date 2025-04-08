@@ -1,13 +1,8 @@
-# Use the official WordPress image
 FROM public.ecr.aws/bitnami/wordpress:latest
 
-# Switch to root user to install dependencies
-USER root
-
-# Install necessary dependencies (including aws CLI, jq, and mysql-client)
-RUN mkdir -p /var/lib/apt/lists/partial && \
-    apt-get update && \
-    apt-get install -y curl unzip jq mariadb-client && \
+# Install Apache and necessary dependencies
+RUN apt-get update && \
+    apt-get install -y apache2 curl unzip jq mariadb-client && \
     curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
     unzip awscliv2.zip && \
     ./aws/install && \
@@ -21,7 +16,7 @@ RUN mkdir -p /var/lib/apt/lists/partial && \
 # Copy custom wp-config.php (if required)
 COPY wp-config.php /var/www/html/wp-config.php
 
-# Copy updated custom theme with 2048 game
+# Copy custom themes
 COPY ./simple-theme /var/www/html/wp-content/themes/simple-theme
 COPY ./Word-Web /var/www/html/wp-content/themes/Word-Web
 
@@ -39,5 +34,5 @@ EXPOSE 80
 # Override the default entrypoint
 ENTRYPOINT ["entrypoint.sh"]
 
-# Start the default WordPress entrypoint
-#CMD ["apache2-foreground"]
+# Start Apache in the foreground
+#CMD ["apache2ctl", "-D", "FOREGROUND"]
