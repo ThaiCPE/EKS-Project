@@ -26,4 +26,4 @@ chmod 644 ${WP_DIR}/.htaccess
 chown www-data:www-data ${WP_DIR}/.htaccess
 
 # Restart Apache
-systemctl restart apache2
+service apache2 restart

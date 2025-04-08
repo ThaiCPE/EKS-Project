@@ -38,5 +38,33 @@ chmod 640 /var/www/html/wp-config.php
 
 echo " WordPress configuration completed successfully!"
 
+
+# Part 2: .htaccess Configuration
+echo "Configuring .htaccess..."
+cat > /var/www/html/.htaccess << 'EOL'
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+
+# HTTP to HTTPS redirect (behind ALB)
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Standard WordPress rewrites
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress
+EOL
+
+# Set permissions
+chown -R www-data:www-data /var/www/html
+chmod 644 /var/www/html/.htaccess
+chmod 640 /var/www/html/wp-config.php
+
 # Start Apache
 #exec apache2-foreground
