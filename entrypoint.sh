@@ -39,4 +39,4 @@ chmod 640 /var/www/html/wp-config.php
 echo " WordPress configuration completed successfully!"
 
 # Start Apache
-exec apache2-foreground
+#exec apache2-foreground

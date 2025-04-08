@@ -32,11 +32,16 @@ RUN chown -R www-data:www-data /var/www/html
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
+# Copy our custom entrypoint script
+COPY htaccess-wp.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/htaccess-wp.sh
+
+
 # Expose WordPress port
 EXPOSE 80
 
 # Override the default entrypoint
 ENTRYPOINT ["entrypoint.sh"]
-
+ENTRYPOINT ["htaccess-wp.sh"]
 # Start the default WordPress entrypoint
-#CMD ["apache2-foreground"]
+CMD ["apache2-foreground"]
