@@ -17,14 +17,12 @@ metadata:
     alb.ingress.kubernetes.io/security-groups: sg-007eec980dbe82770
 
     # Listener and Healthcheck
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
-    alb.ingress.kubernetes.io/healthcheck-path: /
+    #alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+    #alb.ingress.kubernetes.io/healthcheck-path: /
 
 spec:
   ingressClassName: alb
   rules:
-    # Optional: Add host when using Route 53 or domain mapping
-    # - host: basiltalias.site
     - http:
         paths:
           - path: /
