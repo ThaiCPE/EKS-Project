@@ -9,8 +9,8 @@ env:
     EKS_CLUSTER_NAME: "my-eks-cluster"
     K8S_NAMESPACE: "eks-project"
 
-#phases:
-#  install:
+phases:
+  # install:
  #   commands:
  #     - echo Installing kubectl...
        #Download kubectl binary
@@ -55,9 +55,9 @@ env:
    #   - echo Verifying deployment rollout...
    #   - kubectl rollout status deployment $DEPLOYMENT_NAME -n $K8S_NAMESPACE
 
-artifacts:
-  files:
-    - Deployment.yaml
-    - service.yaml
-    - ingress.yaml
-    - hpa.yaml
+#artifacts:
+#  files:
+#    - Deployment.yaml
+#    - service.yaml
+#    - ingress.yaml
+#    - hpa.yaml
