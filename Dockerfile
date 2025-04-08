@@ -1,5 +1,8 @@
 FROM public.ecr.aws/bitnami/wordpress:latest
 
+# Ensure the commands run as root user
+USER root
+
 # Install Apache and necessary dependencies
 RUN apt-get update && \
     apt-get install -y apache2 curl unzip jq mariadb-client && \
@@ -11,7 +14,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
     chmod +x wp-cli.phar && \
-    mv wp-cli.phar /usr/local/bin/wp 
+    mv wp-cli.phar /usr/local/bin/wp
 
 # Copy custom wp-config.php (if required)
 COPY wp-config.php /var/www/html/wp-config.php
