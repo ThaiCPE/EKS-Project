@@ -12,8 +12,8 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
     chmod +x wp-cli.phar && \
-    mv wp-cli.phar /usr/local/bin/wp && \
-    wp core download --path=/var/www/html --allow-root --no-prompt --skip-content
+    mv wp-cli.phar /usr/local/bin/wp
+    #wp core download --path=/var/www/html --allow-root --no-prompt --skip-content
 
 # Copy custom wp-config.php (if required)
 COPY wp-config.php /var/www/html/wp-config.php
@@ -27,6 +27,7 @@ COPY ./Word-Web /var/www/html/wp-content/themes/Word-Web
 
 # Set the correct permissions
 RUN chown -R www-data:www-data /var/www/html
+RUN chmod -R 755 /var/www/html
 
 # Copy the entrypoint script
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh

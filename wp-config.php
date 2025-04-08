@@ -38,10 +38,10 @@ define('WP_HOME', 'https://basiltalias.site');
 define('WP_SITEURL', 'https://basiltalias.site');
 
 // ** Cookie Settings ** //
-define('COOKIE_DOMAIN', 'basiltalias.site');
-define('ADMIN_COOKIE_PATH', '/');
-define('COOKIEPATH', '/');
-define('SITECOOKIEPATH', '/');
+#define('COOKIE_DOMAIN', 'basiltalias.site');
+#define('ADMIN_COOKIE_PATH', '/');
+#define('COOKIEPATH', '/');
+#define('SITECOOKIEPATH', '/');
 
 // ** Absolute path to the WordPress directory. ** //
 if ( !defined('ABSPATH') )
