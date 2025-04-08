@@ -43,14 +43,14 @@ echo " WordPress configuration completed successfully!"
 echo "Configuring .htaccess..."
 cat > /var/www/html/.htaccess << 'EOL'
 # BEGIN WordPress
+# BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
 RewriteRule ^index\.php$ - [L]
 
-# HTTP to HTTPS redirect (behind ALB)
+# HTTP to HTTPS redirect behind ALB
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Standard WordPress rewrites
@@ -58,6 +58,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 </IfModule>
+# END WordPress
 # END WordPress
 EOL
 
