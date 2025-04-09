@@ -44,9 +44,10 @@ if ! grep -q "AllowOverride All" /etc/apache2/apache2.conf; then
     sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
 fi
 
-# Restart Apache to apply changes
-echo "Restarting Apache to apply changes..."
-apache2ctl restart
+# Set the ServerName directive to your domain
+if ! grep -q "ServerName basiltalias.site" /etc/apache2/apache2.conf; then
+    echo "ServerName basiltalias.site" >> /etc/apache2/apache2.conf
+fi
 
 # Start Apache
 exec apache2-foreground
