@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
 <div class="container">
-    <h1>Welcome to Basil's Website!</h1>
-    <p>This is a simple WordPress theme.</p>
+    <h1>Welcome to Basil's Website2!</h1>
+    <p>This is a simple WordPress theme ok.</p>
 
     <!-- Start WordPress Loop -->
     <?php if(have_posts()) : ?>
