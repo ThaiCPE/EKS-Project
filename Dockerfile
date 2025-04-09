@@ -1,5 +1,5 @@
 # Use the official WordPress image
-FROM wordpress:php8.4-apache
+FROM wordpress:6.7.2-php8.0-apache
 
 # Install necessary dependencies (including aws CLI, jq, and mysql-client)
 RUN apt-get update && \
