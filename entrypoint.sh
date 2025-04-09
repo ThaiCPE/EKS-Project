@@ -38,5 +38,15 @@ chmod 640 /var/www/html/wp-config.php
 
 echo " WordPress configuration completed successfully!"
 
+# Add or modify the AllowOverride directive for /var/www/
+if ! grep -q "AllowOverride All" /etc/apache2/apache2.conf; then
+    # If the directive is not already present, add it
+    sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
+fi
+
+# Restart Apache to apply changes
+echo "Restarting Apache to apply changes..."
+apache2ctl restart
+
 # Start Apache
 exec apache2-foreground
