@@ -1,11 +1,9 @@
-FROM public.ecr.aws/bitnami/wordpress:latest
+# Use the official WordPress image
+FROM wordpress:php8.4-apache
 
-# Ensure the commands run as root user
-USER root
-
-# Install Apache and necessary dependencies
+# Install necessary dependencies (including aws CLI, jq, and mysql-client)
 RUN apt-get update && \
-    apt-get install -y apache2 curl unzip jq mariadb-client && \
+    apt-get install -y curl unzip jq mariadb-client && \
     curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
     unzip awscliv2.zip && \
     ./aws/install && \
@@ -14,14 +12,18 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
     chmod +x wp-cli.phar && \
-    mv wp-cli.phar /usr/local/bin/wp
+    mv wp-cli.phar /usr/local/bin/wp 
+    #wp core download --path=/var/www/html --allow-root --no-prompt --skip-content
 
 # Copy custom wp-config.php (if required)
 COPY wp-config.php /var/www/html/wp-config.php
 
-# Copy custom themes
+# Copy updated custom theme with 2048 game
 COPY ./simple-theme /var/www/html/wp-content/themes/simple-theme
 COPY ./Word-Web /var/www/html/wp-content/themes/Word-Web
+#COPY ./2048 /var/www/html/wp-content/themes/2048
+
+#COPY ./gym /var/www/html/wp-content/themes/gym
 
 # Set the correct permissions
 RUN chown -R www-data:www-data /var/www/html
@@ -37,5 +39,5 @@ EXPOSE 80
 # Override the default entrypoint
 ENTRYPOINT ["entrypoint.sh"]
 
-# Start Apache in the foreground
-#CMD ["apache2ctl", "-D", "FOREGROUND"]
+# Start the default WordPress entrypoint
+#CMD ["apache2-foreground"]
