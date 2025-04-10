@@ -8,6 +8,7 @@ env:
     IMAGE_TAG: "wordpress-final"
     EKS_CLUSTER_NAME: "my-eks-cluster"
     K8S_NAMESPACE: "eks-project"
+    DEPLOYMENT_NAME: "wordpress"
 
 phases:
    install:
