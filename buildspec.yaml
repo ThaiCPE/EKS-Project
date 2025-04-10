@@ -11,9 +11,6 @@ phases:
    install:
     commands:
       - echo "Installing dependencies..."
-      - apt-get update -y
-      - apt-get install -y jq awscli
-
 
    pre_build:
     commands:
