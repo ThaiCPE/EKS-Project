@@ -24,7 +24,7 @@ COPY wp-config.php /var/www/html/wp-config.php
 # Copy updated custom theme with 2048 game
 COPY ./simple-theme /var/www/html/wp-content/themes/simple-theme
 COPY ./saas-software-technology /var/www/html/wp-content/themes/saas-software-technology
-
+COPY ./edublock /var/www/html/wp-content/themes/edublock
 
 #COPY ./gym /var/www/html/wp-content/themes/gym
 
