@@ -34,14 +34,23 @@ define('WP_DEBUG_LOG', true);  // This enables the debug log
 define('WP_DEBUG_DISPLAY', false);  // This hides debug messages from displaying on the frontend
 
 // ** URLS ** //
-#define('WP_HOME', 'https://basiltalias.site');
-#define('WP_SITEURL', 'https://basiltalias.site');
+define('WP_HOME', 'https://basiltalias.site');
+define('WP_SITEURL', 'https://basiltalias.site');
+define('FORCE_SSL_ADMIN', true);
 
 // ** Cookie Settings ** //
-#define('COOKIE_DOMAIN', $_SERVER['HTTP_HOST']);
-#define('ADMIN_COOKIE_PATH', '/');
-#define('COOKIEPATH', '/');
-#define('SITECOOKIEPATH', '/');
+define('COOKIE_DOMAIN', $_SERVER['HTTP_HOST']);
+define('ADMIN_COOKIE_PATH', '/');
+define('COOKIEPATH', '/');
+define('SITECOOKIEPATH', '/');
+define('COOKIE_SECURE', true);
+
+// Handle SSL from Load Balancer
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
+      $_SERVER['HTTPS'] = 'on';
+  } elseif (strpos($_SERVER['REQUEST_URI'], '/health') === false) {
+      $_SERVER['HTTPS'] = 'on';
+  }
 
 // ** Absolute path to the WordPress directory. ** //
 if ( !defined('ABSPATH') )
@@ -49,10 +58,3 @@ if ( !defined('ABSPATH') )
 // ** Sets up WordPress vars and included files. ** //
 require_once(ABSPATH . 'wp-settings.php');
 
-
-
-// Skip redirect for health check paths
-#if (strpos($_SERVER['REQUEST_URI'], '/health') === false && $_SERVER['HTTPS'] != 'on') {
-#    header('Location: https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
-#    exit();
-#}

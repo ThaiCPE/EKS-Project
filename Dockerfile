@@ -13,13 +13,13 @@ RUN apt-get update && \
     curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
     chmod +x wp-cli.phar && \
     mv wp-cli.phar /usr/local/bin/wp && \
-    wp core download --path=/var/www/html --allow-root --no-prompt --skip-content
+    wp core download --path=/var/www/html --allow-root --no-prompt
 
 # Copy custom wp-config.php (if required)
 COPY wp-config.php /var/www/html/wp-config.php
 
 # Copy updated custom theme with 2048 game
-#COPY ./simple-theme /var/www/html/wp-content/themes/simple-theme
+COPY ./simple-theme /var/www/html/wp-content/themes/simple-theme
 #COPY ./Word-Web /var/www/html/wp-content/themes/Word-Web
 #COPY ./2048 /var/www/html/wp-content/themes/2048
 
@@ -39,5 +39,3 @@ EXPOSE 80
 # Override the default entrypoint
 ENTRYPOINT ["entrypoint.sh"]
 
-# Start the default WordPress entrypoint
-#CMD ["apache2-foreground"]
