@@ -25,12 +25,23 @@ phases:
 
   build:
     commands:
-      - echo Applying updated Kubernetes manifests...
-      - kubectl apply -f Deployment.yaml -n $K8S_NAMESPACE
-      - kubectl apply -f service.yaml -n $K8S_NAMESPACE
-      - kubectl apply -f ingress.yaml -n $K8S_NAMESPACE
-      - kubectl apply -f hpa.yaml -n $K8S_NAMESPACE
-      - echo Restarting the deployment to apply the new image...
-      - kubectl rollout restart deployment $DEPLOYMENT_NAME -n $K8S_NAMESPACE
-      - echo Verifying deployment rollout...
-      - kubectl rollout status deployment $DEPLOYMENT_NAME -n $K8S_NAMESPACE
+    - echo "Deploying to EKS cluster..."
+    - aws eks update-kubeconfig --region $AWS_REGION --name $EKS_CLUSTER_NAME
+
+    - echo "Applying updated Kubernetes manifests (Service, Ingress, HPA)..."
+    - kubectl apply -f service.yaml -n $K8S_NAMESPACE
+    - kubectl apply -f ingress.yaml -n $K8S_NAMESPACE
+    - kubectl apply -f hpa.yaml -n $K8S_NAMESPACE
+
+    - echo "Checking if deployment $DEPLOYMENT_NAME exists..."
+    - |
+      if kubectl get deployment "$DEPLOYMENT_NAME" -n "$K8S_NAMESPACE"; then
+        echo "Deployment exists. Restarting to apply new image..."
+        kubectl rollout restart deployment "$DEPLOYMENT_NAME" -n "$K8S_NAMESPACE"
+        echo "Verifying deployment rollout..."
+        kubectl rollout status deployment "$DEPLOYMENT_NAME" -n "$K8S_NAMESPACE"
+      else
+        echo "Deployment not found. Applying deployment manifest..."
+        kubectl apply -f Deployment.yaml -n "$K8S_NAMESPACE"
+        echo "Deployment created successfully."
+      fi

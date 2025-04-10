@@ -2,7 +2,7 @@
 
 <div class="container">
     <h1>Welcome to Basil's Website2!- Jesus</h1>
-    <p>This is a simple WordPress theme ok.</p>
+    <p>final one.</p>
 
     <!-- Start WordPress Loop -->
     <?php if(have_posts()) : ?>
