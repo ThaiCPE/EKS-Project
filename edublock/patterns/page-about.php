@@ -16,7 +16,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","textColor":"header-footer"} -->
-<p class="has-text-align-center has-header-footer-color has-text-color">This is some dummy copy. You’re not really supposed to read this dummy copy.</p>
+<p class="has-text-align-center has-header-footer-color has-text-color">Deploying WordPress on EKS? Or all about cloud computing in general?</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:spacer {"height":"60px"} -->
@@ -48,7 +48,7 @@
 
 <!-- wp:column {"style":{"spacing":{"padding":{"left":"0"}}}} -->
 <div class="wp-block-column" style="padding-left:0"><!-- wp:paragraph {"textColor":"lightgrey"} -->
-<p class="has-lightgrey-color has-text-color">This is some dummy copy. You’re not really supposed to read this dummy copy, it is just a place holder for people who need some type to visualize what the actual copy might look like if it were real content.</p>
+<p class="has-lightgrey-color has-text-color">Automated infrastructure provisioning using Terraform to streamline cloud resource deployment</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
@@ -113,7 +113,7 @@
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:paragraph {"textColor":"lightgrey"} -->
-<p class="has-lightgrey-color has-text-color">international stundents from more than 150 countries and terittories</p>
+<p class="has-lightgrey-color has-text-color">Set up CI/CD pipelines using Jenkins and GitHub Actions to enable faster release cycles</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
@@ -133,7 +133,7 @@
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:paragraph {"textColor":"lightgrey"} -->
-<p class="has-lightgrey-color has-text-color">size of our campus, located in Leiden, The Netherlands</p>
+<p class="has-lightgrey-color has-text-color">Configured monitoring and alerting using Prometheus and Grafana for real-time visibility</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
@@ -159,7 +159,7 @@
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:paragraph {"textColor":"lightgrey"} -->
-<p class="has-lightgrey-color has-text-color">Gardens, greenspaces, playing fileds and recreational zones</p>
+<p class="has-lightgrey-color has-text-color">Hardened cloud environments by implementing IAM best practices and security groups.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
@@ -179,7 +179,7 @@
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:paragraph {"textColor":"lightgrey"} -->
-<p class="has-lightgrey-color has-text-color">members of staff employed in academic, academic-related, contract research, technical and administrative roles.</p>
+<p class="has-lightgrey-color has-text-color">Designed a multi-AZ architecture to enhance application availability and fault tolerance</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
@@ -245,7 +245,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"tertiary"} -->
-<p class="has-tertiary-color has-text-color">This is some dummy copy. You’re not really supposed to read this dummy copy, it is just a place holder for people.</p>
+<p class="has-tertiary-color has-text-color">Integrated AWS S3 with CloudFront for faster and secure content delivery</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
@@ -279,7 +279,7 @@
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"textColor":"header-footer"} -->
-<p class="has-header-footer-color has-text-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium.<br><br>Sed enim ut sem viverra aliquet. Consectetur a erat nam at lectus urna duis. Malesuada nunc vel risus commodo viverra maecenas.</p>
+<p class="has-header-footer-color has-text-color">Deployed a secure WordPress site on Amazon EKS with persistent storage and MySQL backend.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
@@ -305,7 +305,7 @@
 <!-- /wp:spacer -->
 
 <!-- wp:paragraph {"textColor":"header-footer"} -->
-<p class="has-header-footer-color has-text-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium.</p>
+<p class="has-header-footer-color has-text-color">Managed Azure resources using ARM templates and Azure CLI for consistent deployments.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
@@ -335,7 +335,7 @@
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"textColor":"header-footer"} -->
-<p class="has-header-footer-color has-text-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium.</p>
+<p class="has-header-footer-color has-text-color">Managed Azure resources using ARM templates and Azure CLI for consistent deployments.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
@@ -440,7 +440,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"lightgrey"} -->
-<p class="has-lightgrey-color has-text-color">This is some dummy copy. You’re not really supposed to read this dummy copy, it is just a place holder for people.</p>
+<p class="has-lightgrey-color has-text-color">Configured monitoring and alerting using Prometheus and Grafana for real-time visibility.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -460,7 +460,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"lightgrey"} -->
-<p class="has-lightgrey-color has-text-color">This is some dummy copy. You’re not really supposed to read this dummy copy, it is just a place holder for people.</p>
+<p class="has-lightgrey-color has-text-color">Configured monitoring and alerting using Prometheus and Grafana for real-time visibility.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -512,7 +512,7 @@
 <!-- /wp:columns -->
 
 <!-- wp:paragraph {"textColor":"header-footer"} -->
-<p class="has-header-footer-color has-text-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium.<br><br>Sed enim ut sem viverra aliquet. Consectetur a erat nam at lectus urna duis. Malesuada nunc vel risus commodo viverra maecenas.</p>
+<p class="has-header-footer-color has-text-color">Managed Azure resources using ARM templates and Azure CLI for consistent deployments.<br><br>Sed enim ut sem viverra aliquet. Consectetur a erat nam at lectus urna duis. Malesuada nunc vel risus commodo viverra maecenas.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -536,7 +536,7 @@
 <!-- /wp:columns -->
 
 <!-- wp:paragraph {"textColor":"header-footer"} -->
-<p class="has-header-footer-color has-text-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium.<br><br>Sed enim ut sem viverra aliquet. Consectetur a erat nam at lectus urna duis. Malesuada nunc vel risus commodo viverra maecenas.</p>
+<p class="has-header-footer-color has-text-color">Managed Azure resources using ARM templates and Azure CLI for consistent deployments.<br><br>Sed enim ut sem viverra aliquet. Consectetur a erat nam at lectus urna duis. Malesuada nunc vel risus commodo viverra maecenas.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -611,7 +611,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"tertiary"} -->
-<p class="has-tertiary-color has-text-color">This is some dummy copy. You’re not really supposed to read this dummy copy, it is just a place holder for people.</p>
+<p class="has-tertiary-color has-text-color">Configured monitoring and alerting using Prometheus and Grafana for real-time visibility.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
@@ -811,7 +811,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"lightgrey"} -->
-<p class="has-lightgrey-color has-text-color">This is some dummy copy. You’re not really supposed to read this dummy copy, it is just a place holder for people.</p>
+<p class="has-lightgrey-color has-text-color">Configured monitoring and alerting using Prometheus and Grafana for real-time visibility.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:spacer {"height":"40px"} -->
