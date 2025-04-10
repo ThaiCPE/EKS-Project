@@ -15,7 +15,8 @@ RUN apt-get update && \
     mv wp-cli.phar /usr/local/bin/wp
 
 # Either remove the --skip-content flag:
-RUN wp core download --path=/var/www/html --allow-root --no-prompt   
+RUN wp core download --path=/var/www/html --allow-root --no-prompt --skip-content
+#wp core download --path=/var/www/html --allow-root --no-prompt   
 
 # Copy custom wp-config.php (if required)
 COPY wp-config.php /var/www/html/wp-config.php
