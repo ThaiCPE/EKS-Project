@@ -30,7 +30,7 @@
 <!-- /wp:spacer -->
 
 <!-- wp:paragraph {"textColor":"white"} -->
-<p class="has-white-color has-text-color">Amazon EKS (Elastic Kubernetes Service) is a managed Kubernetes service that simplifies deploying, managing, and scaling containerized applications using Kubernetes on AWS.</p>
+<p class="has-white-color has-text-color">Starting February 2025, AWS announced extended support for Kubernetes versions in Amazon EKS Anywhere, providing security patches for up to 26 months after a version's release</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
