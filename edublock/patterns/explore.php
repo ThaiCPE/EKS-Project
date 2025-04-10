@@ -19,7 +19,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"tertiary"} -->
-<p class="has-tertiary-color has-text-color">This is some dummy copy. You’re not really supposed to read this dummy copy, it is just a place holder for people.</p>
+<p class="has-tertiary-color has-text-color">Amazon EKS (Elastic Kubernetes Service) is a managed Kubernetes service that simplifies deploying, managing, and scaling containerized applications using Kubernetes on AWS.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 

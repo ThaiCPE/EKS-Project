@@ -44,7 +44,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>This is some dummy copy. You’re not really supposed to read this dummy copy, it is just a place holder for people who need some type.</p>
+<p>Successfully completed Project 8, demonstrating strong skills in cloud infrastructure and deployment using Amazon EKS.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:social-links {"iconColor":"lightgrey","iconColorValue":"#6C6C77","className":"is-style-logos-only"} -->

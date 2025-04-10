@@ -15,7 +15,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>This is some dummy copy. You’re not really supposed to read this dummy copy, it is just a place holder for people who need some type to visualize what the actual copy might look like if it were real content.</p>
+<p>Cloud computing is the delivery of computing services—including servers, storage, databases, networking, software, and analytics—over the internet to offer faster innovation, flexible resources, and economies of scale. It allows users to access and store data on remote servers, enabling on-demand scalability and reducing the need for physical infrastructure.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:social-links {"iconColor":"white","iconColorValue":"#ffffff","style":{"spacing":{"blockGap":{"top":"3px","left":"19px"}}},"className":"is-style-logos-only","layout":{"type":"flex","justifyContent":"left"}} -->
