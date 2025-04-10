@@ -1,0 +1,51 @@
+.saas-software-technology-banner-section h1,.saas-software-technology-banner-section .wp-block-button__link,.saas-software-technology-about-section h2,.saas-software-technology-about-section h3{
+    font-family: 'Ubuntu', sans-serif;
+}
+.saas-software-technology-banner-section .wp-block-button__link,.saas-software-technology-banner-section P,.saas-software-technology-about-section p{
+    font-family: 'Mulish', sans-serif;;
+}
+/*saas-software-technology-banner-section*/
+.saas-software-technology-banner-section img{
+   object-fit: unset !important;
+}
+.saas-software-technology-banner-section h1{
+   font-weight: 700;
+}
+.saas-software-technology-banner-section p{
+   font-weight: 300;
+}
+.saas-software-technology-banner-section .wp-block-button__link{
+    background-color: transparent !important;
+    border-radius: 10px !important;
+    border: 1px solid #fff !important;
+    color: #fff !important;
+}
+.saas-software-technology-banner-section .wp-block-button__link:hover{
+    background-color: #000;
+}
+/*saas-software-technology-about-section*/
+.saas-software-technology-about-section h3{
+    font-weight: 600;
+}
+.saas-software-technology-about-section .aboutus-icon-section .number-column1 {
+    background: #FFB420;
+    box-shadow: 0px 3px 15px #ffb420;
+    border-radius: 10px;
+    color: #fff;
+    width: 45px;
+    height: 45px;
+}
+.saas-software-technology-about-section .aboutus-icon-section .number-column2 {
+    background: var(--primary-color);
+    box-shadow: 0px 3px 15px #ffb420;
+    border-radius: 10px;
+    color: #fff;
+    width: 45px;
+    height: 45px;
+}
+.aboutus-icon-section .number-column1 p,.aboutus-icon-section .number-column2 p{
+    margin-top: 5px;
+}
+.saas-software-technology-about-section .wp-block-columns {
+    flex-wrap: nowrap !important;
+}

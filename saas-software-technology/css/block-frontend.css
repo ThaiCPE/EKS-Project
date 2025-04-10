@@ -1,0 +1,88 @@
+.saas-software-technology-banner-section{
+    width: auto;
+    height: auto;
+    min-height: 600px;
+}
+.saas-software-technology-banner-section .saas-software-technology-banner-section-column .wp-block-column{
+    position: absolute;
+    left: 16%;
+    top: 25%;
+}
+.saas-software-technology-banner-section img{
+   object-fit: unset !important;
+}
+.saas-software-technology-banner-section h1{
+   font-weight: 700;
+}
+.saas-software-technology-banner-section p{
+   font-weight: 300;
+}
+.saas-software-technology-banner-section a.wp-block-button__link{
+    background-color: transparent !important;
+    border-radius: 10px !important;
+    border: 1px solid #fff !important;
+    color: #fff !important;
+}
+.saas-software-technology-banner-section a.wp-block-button__link:hover{
+    border: 1px solid #000 !important;
+}
+/*saas-software-technology-about-section*/
+.saas-software-technology-about-section h3{
+    font-weight: 600;
+}
+.saas-software-technology-about-section .aboutus-icon-section .number-column {
+    background: #FFB420;
+    box-shadow: 0px 3px 15px #ffb420;
+    border-radius: 10px;
+    color: #fff;
+    width: 45px;
+    height: 45px;
+}
+.saas-software-technology-about-section .aboutus-icon-section .number-column1 {
+    background: #FFB420;
+    box-shadow: 0px 3px 15px #ffb420;
+    border-radius: 10px;
+    color: #fff;
+    width: 45px;
+    height: 45px;
+}
+.saas-software-technology-about-section .aboutus-icon-section .number-column2 {
+    background: var(--primary-color);
+    box-shadow: 0px 3px 15px #ffb420;
+    border-radius: 10px;
+    color: #fff;
+    width: 45px;
+    height: 45px;
+}
+@media screen and (min-width: 320px) and (max-width:720px) {
+    .wp-block-columns.saas-software-technology-banner-section-column{
+      padding: 0px !important;
+      margin: 0px !important;
+   }
+   .saas-software-technology-banner-section h1{
+      font-size: 32px !important;
+   }
+   .aboutus-icon-section .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column.number-column1,.aboutus-icon-section .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column.number-column2{
+      flex-basis: 20%!important;
+   }
+   .aboutus-icon-section .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column,.aboutus-icon-section .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{
+    flex-basis: 50% !important;
+   }
+   .saas-software-technology-banner-section .saas-software-technology-banner-section-column .wp-block-column{
+    left: 5%;
+    top: 15%;
+   }
+}
+@media screen and (min-width: 721px) and (max-width:991px) {
+   .saas-software-technology-about-section .wp-block-columns {
+      flex-wrap: nowrap !important;
+   }
+   .saas-software-technology-banner-section .saas-software-technology-banner-section-column .wp-block-column{
+        left: 5%;
+    }
+}
+@media screen and (min-width: 992px) and (max-width:1024px) {
+    .saas-software-technology-banner-section .saas-software-technology-banner-section-column .wp-block-column{
+        left: 5%;
+    }
+   }
