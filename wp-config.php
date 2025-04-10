@@ -34,11 +34,11 @@ define('WP_DEBUG_LOG', true);  // This enables the debug log
 define('WP_DEBUG_DISPLAY', false);  // This hides debug messages from displaying on the frontend
 
 // ** URLS ** //
-define('WP_HOME', 'https://basiltalias.site');
-define('WP_SITEURL', 'https://basiltalias.site');
+#define('WP_HOME', 'https://basiltalias.site');
+#define('WP_SITEURL', 'https://basiltalias.site');
 
 // ** Cookie Settings ** //
-define('COOKIE_DOMAIN', $_SERVER['HTTP_HOST']);
+#define('COOKIE_DOMAIN', $_SERVER['HTTP_HOST']);
 #define('ADMIN_COOKIE_PATH', '/');
 #define('COOKIEPATH', '/');
 #define('SITECOOKIEPATH', '/');
