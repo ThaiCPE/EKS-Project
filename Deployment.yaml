@@ -4,7 +4,7 @@ metadata:
   name: wordpress
   namespace: eks-project  # Explicitly specify the namespace
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: wordpress
