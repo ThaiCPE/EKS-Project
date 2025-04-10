@@ -42,12 +42,16 @@ phases:
 
       - echo "Updating deployment..."
       - |
-        if kubectl get deployment "$DEPLOYMENT_NAME" -n "$K8S_NAMESPACE"; then
-          kubectl set image deployment/$DEPLOYMENT_NAME "*=$ECR_REGISTRY/$REPO_NAME:$IMAGE_TAG" -n $K8S_NAMESPACE || { echo "[WARNING] Deployment update failed"; }
-          kubectl rollout status deployment "$DEPLOYMENT_NAME" -n "$K8S_NAMESPACE" --timeout=120s || { echo "[WARNING] Rollout failed"; }
-        else
-          kubectl apply -f Deployment.yaml -n "$K8S_NAMESPACE" || { echo "[WARNING] Deployment creation failed"; }
-        fi
+       if kubectl get deployment "$DEPLOYMENT_NAME" -n "$K8S_NAMESPACE"; then
+        echo "Deployment exists. Restarting to apply new image..."
+        kubectl rollout restart deployment "$DEPLOYMENT_NAME" -n "$K8S_NAMESPACE"
+        echo "Verifying deployment rollout..."
+        kubectl rollout status deployment "$DEPLOYMENT_NAME" -n "$K8S_NAMESPACE"
+       else
+        echo "Deployment not found. Applying deployment manifest..."
+        kubectl apply -f Deployment.yaml -n "$K8S_NAMESPACE"
+        echo "Deployment created successfully."
+       fi
 
   post_build:
     commands:

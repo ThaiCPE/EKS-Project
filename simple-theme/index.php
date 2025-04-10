@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div class="container">
-    <h1>bye bye to goodnight- Jesus</h1>
+    <h1>bye bye sleep goodnight- Jesus</h1>
     <p>final one.</p>
 
     <!-- Start WordPress Loop -->
