@@ -50,7 +50,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"tertiary"} -->
-<p class="has-tertiary-color has-text-color">This is some dummy copy. You’re not really supposed to read this dummy copy, it is just a place holder for people.</p>
+<p class="has-tertiary-color has-text-color">Successfully completed Project 8, demonstrating strong skills in cloud infrastructure and deployment using Amazon EKS.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
