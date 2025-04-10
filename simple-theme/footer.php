@@ -1,5 +1,5 @@
 <footer>
-    <p>&copy; <?php echo date('Y'); ?> My Simple WordPress Theme</p>
+    <p>&copy; <?php echo date('Y'); ?> My Simple WordPress Theme-got it</p>
 </footer>
 
 <?php wp_footer(); ?>
