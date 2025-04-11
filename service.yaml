@@ -4,7 +4,7 @@ metadata:
   name: wordpress-service
   namespace: eks-project 
 spec:
-  type: ClusterIP  # Change from ClusterIP to NodePort
+  type: ClusterIP  
   selector:
     app: wordpress
   ports:
