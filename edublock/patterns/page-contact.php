@@ -51,7 +51,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"tertiary"} -->
-<p class="has-tertiary-color has-text-color">This is some dummy copy. You’re not really supposed to read this dummy copy, it is just a place holder for people.</p>
+<p class="has-tertiary-color has-text-color"> Amazon EKS supports Kubernetes version 1.32 across all AWS regions, including AWS GovCloud (US).</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:spacer {"height":"40px"} -->
@@ -181,7 +181,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","textColor":"tertiary"} -->
-<p class="has-text-align-center has-tertiary-color has-text-color">This is some dummy copy. You’re not really supposed to read this dummy copy, it is just a place holder for people.</p>
+<p class="has-text-align-center has-tertiary-color has-text-color">.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
@@ -216,7 +216,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"tertiary"} -->
-<p class="has-tertiary-color has-text-color">This is some dummy copy. You’re not really supposed to read this dummy copy, it is just a place holder for people.</p>
+<p class="has-tertiary-color has-text-color">.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
