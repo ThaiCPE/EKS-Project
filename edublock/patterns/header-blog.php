@@ -30,7 +30,7 @@
 <!-- /wp:spacer -->
 
 <!-- wp:paragraph {"textColor":"white"} -->
-<p class="has-white-color has-text-color">Azure DevOps Updates: Microsoft released patches for Azure DevOps Server and Team Foundation Server, including changes to CDN endpoints and mandatory Server Name Indication (SNI) for enhanced security</p>
+<p class="has-white-color has-text-color">Azure DevOps Updates:: Microsoft released patches for Azure DevOps Server and Team Foundation Server, including changes to CDN endpoints and mandatory Server Name Indication (SNI) for enhanced security</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
