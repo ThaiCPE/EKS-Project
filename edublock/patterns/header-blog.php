@@ -30,7 +30,7 @@
 <!-- /wp:spacer -->
 
 <!-- wp:paragraph {"textColor":"white"} -->
-<p class="has-white-color has-text-color">EKS Project completed Successfully</p>
+<p class="has-white-color has-text-color">Reshma is a bad girl</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
