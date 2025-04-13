@@ -25,6 +25,7 @@ COPY wp-config.php /var/www/html/wp-config.php
 COPY ./simple-theme /var/www/html/wp-content/themes/simple-theme
 COPY ./saas-software-technology /var/www/html/wp-content/themes/saas-software-technology
 COPY ./edublock /var/www/html/wp-content/themes/edublock
+COPY ./fluxari-two /var/www/html/wp-content/themes/fluxari-two
 
 # Set the correct permissions
 RUN chown -R www-data:www-data /var/www/html
