@@ -58,6 +58,7 @@ It strengthened my hands-on experience with Kubernetes, AWS services, cloud-nati
 - **Networking:** VPC, Subnets, ALB, NAT Gateway, Route 53, CloudFront
 
 **Architecture Diagram:**  
+
 $~$
 
 ![Architecture Diagram](https://github.com/BasilTAlias/EKS-Project/blob/main/images/architecture-diagram.png)
