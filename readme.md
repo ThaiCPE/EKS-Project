@@ -58,11 +58,15 @@ It strengthened my hands-on experience with Kubernetes, AWS services, cloud-nati
 - **Networking:** VPC, Subnets, ALB, NAT Gateway, Route 53, CloudFront
 
 **Architecture Diagram:**  
+$~$
+
 ![Architecture Diagram](https://github.com/BasilTAlias/EKS-Project/blob/main/images/architecture-diagram.png)
 
 ---
 
 ## 🛰️ VPC Resource Map
+
+$~$
 
 ![VPC Resource Map](https://github.com/BasilTAlias/EKS-Project/blob/main/images/vpc-resources-screenshot.png)
 
@@ -94,6 +98,8 @@ It strengthened my hands-on experience with Kubernetes, AWS services, cloud-nati
 - Automated: GitHub → CodePipeline → CodeBuild → EKS
 - Builds Docker image → Pushes to ECR → Deploys to EKS
 - Alerts via SNS and logs in CloudWatch
+
+$~$
 
 ![Pipeline Image](https://github.com/BasilTAlias/EKS-Project/blob/main/images/Codebuild.png)
 
@@ -132,11 +138,19 @@ It strengthened my hands-on experience with Kubernetes, AWS services, cloud-nati
 🔗 **Website:** [https://basiltalias.site](https://basiltalias.site)
 
 📸 **Admin Panel:**  
+
+$~$
 ![Admin Screenshot](https://github.com/BasilTAlias/EKS-Project/blob/main/images/wordpress-admin.png)
 
+$~$
+
 📸 **Website Frontend:**  
+
+$~$
+
 ![Frontend Screenshot](https://github.com/BasilTAlias/EKS-Project/blob/main/images/wordpress-site.png)
 
+$~$
 ---
 
 ## 🌱 Future Improvements
