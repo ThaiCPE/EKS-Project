@@ -57,6 +57,8 @@ It strengthened my hands-on experience with Kubernetes, AWS services, cloud-nati
 - **Security:** WAF, ACM SSL, IAM roles, Private Subnets
 - **Networking:** VPC, Subnets, ALB, NAT Gateway, Route 53, CloudFront
 
+---
+
 **Architecture Diagram:**  
 
 $~$
