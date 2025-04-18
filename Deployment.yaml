@@ -25,7 +25,7 @@ spec:
             requests:
               memory: "512Mi"  # Increase the memory request
               cpu: "500m"      # Increase CPU request
-              #cpu: "100m"
+              #cpu: "200m"
             limits:
               memory: "1Gi"    # Increase the memory limit
               cpu: "1"         # Increase CPU limit
