@@ -183,6 +183,17 @@ This project significantly enhanced my practical understanding of:
 
 ---
 
+
+📝 Medium Article
+
+I also wrote a Medium article that walks through this project step-by-step:
+
+Title: Deploying a Scalable WordPress Application on AWS EKS with CI/CD and Secrets Management
+
+Link: https://medium.com/@basiltaliaz/deploying-a-scalable-wordpress-application-on-aws-eks-with-ci-cd-and-secrets-management-ead38653fdcd
+
+---
+
 ## 📇 Contact
 
 **Author:** Basil Thekkanath Alias  
