@@ -13,7 +13,7 @@ Project นี้แสดงให้เห็นถึงการ Deploy แ�
 
 ## 🗂️ สารบัญ
 
-- [Highlight ของ Project](#-project-highlights)
+- [Highlight ของ Project](#-Highlight-ของ-Project)
 - [Architecture Overview](#-architecture-overview)
 - [VPC Resource Map](#-vpc-resource-map)
 - [Deployment Summary](#-deployment-summary)
@@ -28,13 +28,13 @@ Project นี้แสดงให้เห็นถึงการ Deploy แ�
 
 ## 🌟 Highlight ของ Project
 
-🔧 **Version Control:** Git & GitHub for CI/CD integration.  
-🐳 **Containerization:** Custom WordPress Docker image with AWS CLI, WP-CLI, and MariaDB client.  
-🗄️ **AWS RDS (MariaDB):** Private subnet, encrypted at rest, with automatic backups.  
-☸️ **Amazon EKS:** Highly available, scalable Kubernetes cluster for container orchestration.  
-🛡️ **Pod Identity Agent:** Secure pod access to AWS Secrets Manager without hardcoded credentials.  
-🔐 **Secrets Manager:** Dynamic secret injection at runtime for database connectivity.  
-📦 **Amazon ECR:** Private registry for storing Docker images.  
+🔧 **Version Control:** Git & GitHub สำหรับ Integrate CI/CD  
+🐳 **Containerization:** Custom WordPress Docker Image ด้วย AWS CLI, WP-CLI, และ MariaDB Client  
+🗄️ **AWS RDS (MariaDB):** Private Subnet, Encrypted at rest, ด้วย Automatic Backup  
+☸️ **Amazon EKS:** Highly Available, Kubernetes Cluster ที่ Scale ได้ สำหรับจัดการ Container  
+🛡️ **Pod Identity Agent:** Secure Pod Access ไปหา AWS Secrets Manager โดยไม่มีการ Hardcode Credential  
+🔐 **Secrets Manager:** Dynamic Secret Injection ตอน Runtime ในการเชื่อมต่อกับ Database  
+📦 **Amazon ECR:** Private Registry สำหรับเก็บ Docker Image  
 ⚙️ **AWS CodePipeline + CodeBuild:** Automated build & deployment from GitHub to EKS.  
 🌍 **Route 53 & CloudFront:** DNS routing & CDN for optimized global reach.  
 🧩 **Application Load Balancer + Ingress:** Managed HTTPS traffic with SSL redirection.  
