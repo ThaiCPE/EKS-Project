@@ -13,20 +13,20 @@ Project นี้แสดงให้เห็นถึงการ Deploy แ�
 
 ## 🗂️ สารบัญ
 
-- [Project Highlights](#-project-highlights)
-- [Architecture Overview](#architecture-overview)
-- [VPC Resource Map](#vpc-resource-map)
-- [Deployment Summary](#deployment-summary)
-- [EKS Add-ons Configuration](#eks-add-ons-configuration)
-- [Achievements & Learning Outcomes](#achievements--learning-outcomes)
-- [Live Deployment](#live-deployment)
-- [Future Improvements](#future-improvements)
-- [Conclusion](#conclusion)
-- [Contact](#contact)
+- [Highlight ของ Project](#-project-highlights)
+- [Architecture Overview](#-architecture-overview)
+- [VPC Resource Map](#-vpc-resource-map)
+- [Deployment Summary](#-deployment-summary)
+- [EKS Add-ons Configuration](#-eks-add-ons-configuration)
+- [Achievements & Learning Outcomes](#-achievements--learning-outcomes)
+- [Live Deployment](#-live-deployment)
+- [Future Improvements](#-future-improvements)
+- [Conclusion](#-conclusion)
+- [Contact](#-contact)
 
 ---
 
-## 🌟 Project Highlights
+## 🌟 Highlight ของ Project
 
 🔧 **Version Control:** Git & GitHub for CI/CD integration.  
 🐳 **Containerization:** Custom WordPress Docker image with AWS CLI, WP-CLI, and MariaDB client.  
