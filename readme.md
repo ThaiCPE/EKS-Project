@@ -1,19 +1,19 @@
-# 🚀 Project: Deploying a Containerized Web Application on AWS
+# 🚀 Project: Deploy Container Web App บน AWS
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/BasilTAlias/EKS-Project)
 ![GitHub repo size](https://img.shields.io/github/repo-size/BasilTAlias/EKS-Project)
 
 ---
 
-This project showcases the complete end-to-end deployment of a containerized WordPress web application using **Amazon EKS**, supported by a fully automated CI/CD pipeline, secure secret management, and scalable AWS architecture.
+Project นี้แสดงให้เห็นถึงการ Deploy แบบครบวงจรของ Web App WordPress ที่ใช้ Container โดยใช้ Amazon EKS ซึ่ง Support Pipeline CI/CD ที่ทำงานอัตโนมัติอย่างสมบูรณ์, การจัดการ Secret ที่ปลอดภัย, และสถาปัตยกรรม AWS ที่ Scale ได้
 
-It strengthened my hands-on experience with Kubernetes, AWS services, cloud-native security, and DevOps automation.
+มันจะช่วยเสริมสร้างประสบการณ์การปฏิบัติงานจริงในด้าน Kubernetes, บริการ AWS, ความปลอดภัยแบบ Cloud-native และระบบอัตโนมัติ DevOps
 
 ---
 
-## 🗂️ Table of Contents
+## 🗂️ สารบัญ
 
-- [Project Highlights](#project-highlights)
+- [Project Highlights](#-project-highlights)
 - [Architecture Overview](#architecture-overview)
 - [VPC Resource Map](#vpc-resource-map)
 - [Deployment Summary](#deployment-summary)
