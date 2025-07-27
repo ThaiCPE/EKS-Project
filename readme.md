@@ -14,9 +14,9 @@ Project นี้แสดงให้เห็นถึงการ Deploy แ�
 ## 🗂️ สารบัญ
 
 - [Highlight ของ Project](#-Highlight-ของ-Project)
-- [Architecture Overview](#-architecture-overview)
+- [ภาพรวมสถาปัตยกรรม](#-ภาพรวมสถาปัตยกรรม)
 - [VPC Resource Map](#-vpc-resource-map)
-- [Deployment Summary](#-deployment-summary)
+- [สรุปการ Deploy](#-สรุปการ-Deploy)
 - [EKS Add-ons Configuration](#-eks-add-ons-configuration)
 - [Achievements & Learning Outcomes](#-achievements--learning-outcomes)
 - [Live Deployment](#-live-deployment)
@@ -35,27 +35,27 @@ Project นี้แสดงให้เห็นถึงการ Deploy แ�
 🛡️ **Pod Identity Agent:** Secure Pod Access ไปหา AWS Secrets Manager โดยไม่มีการ Hardcode Credential  
 🔐 **Secrets Manager:** Dynamic Secret Injection ตอน Runtime ในการเชื่อมต่อกับ Database  
 📦 **Amazon ECR:** Private Registry สำหรับเก็บ Docker Image  
-⚙️ **AWS CodePipeline + CodeBuild:** Automated build & deployment from GitHub to EKS.  
-🌍 **Route 53 & CloudFront:** DNS routing & CDN for optimized global reach.  
-🧩 **Application Load Balancer + Ingress:** Managed HTTPS traffic with SSL redirection.  
-🔑 **IAM Roles & Policies:** Fine-grained service access controls (least privilege).  
-📊 **CloudWatch & SNS:** Monitoring logs, metrics, and pipeline notifications.  
-🛡️ **AWS WAF:** Web security to protect against OWASP Top 10 threats.  
-🧩 **VPC Design:** Multi-AZ custom VPC with public/private subnets and NAT Gateway.
+⚙️ **AWS CodePipeline + CodeBuild:** Build & Deployment จาก GitHub ไปยัง EKS อัตโนมัติ  
+🌍 **Route 53 & CloudFront:** DNS Routing & CDN เพื่อการเข้าถึงจากทั่วโลกที่เหมาะสม  
+🧩 **Application Load Balancer + Ingress:** จัดการ HTTPS Traffic ด้วย SSL Redirect  
+🔑 **IAM Roles & Policies:** ควบคุมการเข้าถึงบริการแบบละเอียด (สิทธิ์น้อยที่สุด (Least Privilege))  
+📊 **CloudWatch & SNS:** Monitor Log, Metric, และการแจ้งเตือน Pipeline  
+🛡️ **AWS WAF:** Web Security เพื่อป้องกันภัยคุกคาม OWASP Top 10  
+🧩 **VPC Design:** Multi-AZ Custom VPC พรอ้ม Public/Private Subnet และ NAT Gateway
 
 ---
 
-## 📐 Architecture Overview
+## 📐 ภาพรวมสถาปัตยกรรม
 
 - **Platform:** Amazon EKS (Elastic Kubernetes Service)
-- **Containerization:** Docker (custom WordPress image)
+- **Containerization:** Docker (Custom WordPress Image)
 - **CI/CD:** AWS CodePipeline + CodeBuild
 - **Registry:** Amazon ECR
 - **Database:** Amazon RDS (MariaDB)
 - **Secrets Management:** AWS Secrets Manager
 - **Monitoring:** CloudWatch & Container Insights
-- **Security:** WAF, ACM SSL, IAM roles, Private Subnets
-- **Networking:** VPC, Subnets, ALB, NAT Gateway, Route 53, CloudFront
+- **Security:** WAF, ACM SSL, IAM Role, Private Subnet
+- **Networking:** VPC, Subnet, ALB, NAT Gateway, Route 53, CloudFront
 
 ---
 
@@ -75,9 +75,13 @@ $~$
 
 ---
 
-## 🚀 Deployment Summary
+## 🚀 สรุปการ Deploy
 
-### 📦 Dockerfile Highlights
+### ✅ Step 1: Fork Repo ไป GitHub
+1. กด Fork Repo นี้ หรือ Clone ไปทำงานของตัวเอง
+2. สร้าง CodePipeline แบบเชื่อม GitHub
+
+### 📦 Highlight ของ Dockerfile
 
 - Built on official WordPress + PHP + Apache image
 - Added AWS CLI, MariaDB client, WP-CLI
@@ -196,9 +200,9 @@ Link: https://medium.com/@basiltaliaz/deploying-a-scalable-wordpress-application
 
 ## 📇 Contact
 
-**Author:** Basil Thekkanath Alias  
-🔗 [LinkedIn](https://www.linkedin.com/in/basil-t-alias/)  
-📂 [GitHub Project](https://github.com/BasilTAlias/EKS-Project)
+**Author:** ThaiCPE  
+🔗 [Facebook](https://www.facebook.com/thaicpe)  
+📂 [GitHub Project](https://github.com/ThaiCPE/EKS-Project)
 
 ---
 
