@@ -81,6 +81,12 @@ $~$
 1. กด Fork Repo นี้ หรือ Clone ไปทำงานของตัวเอง
 2. สร้าง CodePipeline แบบเชื่อม GitHub
 
+### ✅ Step 2: สร้าง Amazon ECR สำหรับเก็บ Docker image
+
+<img width="1917" height="894" alt="image" src="https://github.com/user-attachments/assets/dd61d46f-30a1-4dfd-9242-62bb9d5f4e39" />
+
+จะได้ ECR URI เช่น: 73855636xx.dkr.ecr.ap-southeast-7.amazonaws.com/wordpress-eks
+
 ### 📦 Highlight ของ Dockerfile
 
 - Built on official WordPress + PHP + Apache image
