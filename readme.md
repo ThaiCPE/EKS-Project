@@ -15,7 +15,7 @@ Project นี้แสดงให้เห็นถึงการ Deploy แ�
 
 - [Highlight ของ Project](#-Highlight-ของ-Project)
 - [ภาพรวมสถาปัตยกรรม](#-ภาพรวมสถาปัตยกรรม)
-- [VPC Resource Map](#-VPC-Resource-Map)
+- [VPC Resource Map](#%EF%B8%8F-vpc-resource-map)
 - [สรุปการ Deploy](#-สรุปการ-Deploy)
 - [EKS Add-ons Configuration](#-eks-add-ons-configuration)
 - [Achievements & Learning Outcomes](#-achievements--learning-outcomes)
