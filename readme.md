@@ -1,7 +1,7 @@
 # 🚀 Project: Deploy Container Web App บน AWS
 
-![GitHub last commit](https://img.shields.io/github/last-commit/BasilTAlias/EKS-Project)
-![GitHub repo size](https://img.shields.io/github/repo-size/BasilTAlias/EKS-Project)
+![GitHub last commit](https://img.shields.io/github/last-commit/ThaiCPE/EKS-Project)
+![GitHub repo size](https://img.shields.io/github/repo-size/ThaiCPE/EKS-Project)
 
 ---
 
@@ -91,11 +91,23 @@ $~$
 
 https://www.youtube.com/watch?v=6cOXFv-H2q4
 
+### 🔄 Flow เป็นแบบนี้:
+
+📦 1. CodeBuild ทำอะไร?
+- CodeBuild ไป Clone GitHub Repo มา (ที่มี Dockerfile, wp-config.php ฯลฯ)
+- แล้ว Build Image ตาม Dockerfile
+- สร้าง Container Image และ Push ขึ้น ECR
+
+🧱 2. Dockerfile ทำอะไร?
+- Dockerfile อาจใช้ base image แบบ wordpress:php8.2-apache
+
+คัดลอกไฟล์ต่าง ๆ เข้าไป
+
 ### 📦 Highlight ของ Dockerfile
 
-- Built on official WordPress + PHP + Apache image
-- Added AWS CLI, MariaDB client, WP-CLI
-- Copied custom themes and `wp-config.php`
+- สร้าง Image จาก Official WordPress + PHP + Apache
+- เพิ่ม AWS CLI, MariaDB Client, WP-CLI
+- Copy Custom Theme (edublock, saas-software-technology, simple-theme) และ `wp-config.php` Template
 
 ### 🔐 Entrypoint Script (`entrypoint.sh`)
 
