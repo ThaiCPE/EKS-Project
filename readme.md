@@ -103,11 +103,17 @@ https://www.youtube.com/watch?v=6cOXFv-H2q4
 - เพิ่ม AWS CLI, MariaDB Client, WP-CLI
 - Copy File ต่างๆ เข้าไป พวก Custom Theme (edublock, saas-software-technology, simple-theme) และ `wp-config.php` Template
 
-### 🔐 Entrypoint Script (`entrypoint.sh`)
+🚀 3. พอ Deploy Container บน EKS มันทำงานยังไง?
+✅ ตอน Container ถูก Run:
+- ระบบจะไป Pull Image จาก ECR มา
+- แล้ว Container จะ Run entrypoint.sh ที่อยู่ใน Image
+- ใน entrypoint.sh จะมี Logic:
+ - ไป ดึง Secret มาจาก AWS Secret Manager
 
-- Retrieves database secrets from Secrets Manager
-- Updates `wp-config.php` at runtime
-- Validates DB connection before startup
+   <img width="1919" height="897" alt="image" src="https://github.com/user-attachments/assets/29d4f5ed-eeaf-4317-901e-6c91309f6917" />
+   
+ - เอามา Update File `wp-config.php` ที่อยู่ใน Container
+ - แล้ว Validates DB Connection ก่อน Startup
 
 ### ☸️ Kubernetes Manifests
 
