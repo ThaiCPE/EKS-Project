@@ -87,6 +87,10 @@ $~$
 
 จะได้ ECR URI เช่น: 73855636xx.dkr.ecr.ap-southeast-7.amazonaws.com/wordpress-eks
 
+### ✅ Step 3: สร้าง EKS Cluster  
+
+https://www.youtube.com/watch?v=6cOXFv-H2q4
+
 ### 📦 Highlight ของ Dockerfile
 
 - Built on official WordPress + PHP + Apache image
