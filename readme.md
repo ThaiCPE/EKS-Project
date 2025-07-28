@@ -77,21 +77,21 @@ $~$
 
 ## 🚀 สรุปการ Deploy
 
-### ✅ Step 1: Fork Repo ไป GitHub
+✅ Step 1: Fork Repo ไป GitHub
 1. กด Fork Repo นี้ หรือ Clone ไปทำงานของตัวเอง
 2. สร้าง CodePipeline แบบเชื่อม GitHub
 
-### ✅ Step 2: สร้าง Amazon ECR สำหรับเก็บ Docker image  
+✅ Step 2: สร้าง Amazon ECR สำหรับเก็บ Docker image  
 
 <img width="1917" height="894" alt="image" src="https://github.com/user-attachments/assets/dd61d46f-30a1-4dfd-9242-62bb9d5f4e39" />  
 
 จะได้ ECR URI เช่น: 73855636xx.dkr.ecr.ap-southeast-7.amazonaws.com/wordpress-eks
 
-### ✅ Step 3: สร้าง EKS Cluster  
+✅ Step 3: สร้าง EKS Cluster  
 
 https://www.youtube.com/watch?v=6cOXFv-H2q4
 
-### 🔄 Flow เป็นแบบนี้:
+🔄 Flow เป็นแบบนี้:
 
 📦 1. CodeBuild ทำอะไร?
 - CodeBuild ไป Clone GitHub Repo มา (ที่มี Dockerfile, wp-config.php ฯลฯ)
@@ -99,15 +99,9 @@ https://www.youtube.com/watch?v=6cOXFv-H2q4
 - สร้าง Container Image และ Push ขึ้น ECR
 
 🧱 2. Dockerfile ทำอะไร?
-- Dockerfile อาจใช้ base image แบบ wordpress:php8.2-apache
-
-คัดลอกไฟล์ต่าง ๆ เข้าไป
-
-### 📦 Highlight ของ Dockerfile
-
-- สร้าง Image จาก Official WordPress + PHP + Apache
+- Dockerfile สร้าง Image จาก Official WordPress + PHP + Apache
 - เพิ่ม AWS CLI, MariaDB Client, WP-CLI
-- Copy Custom Theme (edublock, saas-software-technology, simple-theme) และ `wp-config.php` Template
+- Copy File ต่างๆ เข้าไป พวก Custom Theme (edublock, saas-software-technology, simple-theme) และ `wp-config.php` Template
 
 ### 🔐 Entrypoint Script (`entrypoint.sh`)
 
