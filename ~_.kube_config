@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Config
+clusters:
+  - name: arn:aws:eks:ap-southeast-7:83773225:cluster/nonprd-eks
+    cluster:
+      server: >-
+        https://C16618E6CEE38D30C667FC6B20E8.yl4.ap-southeast-7.eks.amazonaws.com
+      certificate-authority-data: >-
+        LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJUGpaRy9SUE5iVzR3RFFZSktvWklodmN
+      insecure-skip-tls-verify: false
+users:
+  - name: arn:aws:eks:ap-southeast-7:83773225:cluster/nonprd-eks
+    user:
+      exec:
+        apiVersion: client.authentication.k8s.io/v1beta1
+        args:
+          - exec
+          - nonprd
+          - '--'
+          - aws
+          - '--region'
+          - ap-southeast-7
+          - eks
+          - get-token
+          - '--cluster-name'
+          - nonprd-eks
+          - '--output'
+          - json
+        command: aws-vault
+        env: null
+        interactiveMode: IfAvailable
+        provideClusterInfo: false
+contexts:
+  - name: eks-nonprd-eks
+    context:
+      cluster: arn:aws:eks:ap-southeast-7:83773225:cluster/nonprd-eks
+      name: eks-nonprd-eks
+      user: arn:aws:eks:ap-southeast-7:83773225:cluster/nonprd-eks
+preferences: {}
