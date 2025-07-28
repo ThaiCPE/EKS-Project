@@ -108,12 +108,12 @@ https://www.youtube.com/watch?v=6cOXFv-H2q4
 - ระบบจะไป Pull Image จาก ECR มา
 - แล้ว Container จะ Run entrypoint.sh ที่อยู่ใน Image
 - ใน entrypoint.sh จะมี Logic:
- - ไป ดึง Secret มาจาก AWS Secret Manager
+  - ไป ดึง Secret มาจาก AWS Secret Manager
 
-   <img width="1919" height="897" alt="image" src="https://github.com/user-attachments/assets/29d4f5ed-eeaf-4317-901e-6c91309f6917" />
+    <img width="1919" height="897" alt="image" src="https://github.com/user-attachments/assets/29d4f5ed-eeaf-4317-901e-6c91309f6917" />
    
- - เอามา Update File `wp-config.php` ที่อยู่ใน Container
- - แล้ว Validates DB Connection ก่อน Startup
+  - เอามา Update File `wp-config.php` ที่อยู่ใน Container
+  - แล้ว Validates DB Connection ก่อน Startup
 
 ### ☸️ Kubernetes Manifests
 
